@@ -40,12 +40,12 @@ class App extends Component {
 
 
           <Route
-            exact path="/pantry-category/:category_id"
+            exact path="/pantry/pantry-category/:category_id"
             component={CategoryNav}
           />
 
           <Route
-            exact path="/pantry-category/:category_id"
+            exact path="/pantry/pantry-category/:category_id"
             component={PantryFilter}
           />
 

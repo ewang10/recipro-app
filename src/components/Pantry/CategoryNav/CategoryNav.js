@@ -9,7 +9,7 @@ class CategoryNav extends Component {
                 return (
                     <div className="category" key={i}>
                         <h4>
-                            <NavLink to={`/pantry-category/${category.id}`}>
+                            <NavLink to={`/pantry/pantry-category/${category.id}`}>
                                 {category.name}
                             </NavLink>
                         </h4>

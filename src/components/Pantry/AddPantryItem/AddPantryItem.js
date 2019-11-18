@@ -19,6 +19,9 @@ class AddPantryItem extends Component {
                         id="itemName"
                         aria-required="true"
                         required />
+                    <label htmlFor="itemCategory">
+                        Category: 
+                    </label>
                     <select
                         name="itemCategory"
                         id="itemCategory"

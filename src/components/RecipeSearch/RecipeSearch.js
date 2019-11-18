@@ -5,7 +5,7 @@ class RecipeSearch extends Component {
     render() {
         return (
             <section className="wrapper">
-                <div className="center">
+                <div className="">
                     <form className="recipe_search">
                         <label htmlFor="search">Find something to cook</label>
                         <input name="search" id="search" 

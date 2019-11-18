@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CategoryNav from './CategoryNav/CategoryNav';
-import ItemNav from './ItemNav/ItemNav';
 import PantryFilter from './PantryFilter/PantryFilter';
-import PantryItemMain from './PantryItemMain/PantryItemMain';
-import PantryItem from './PantryItem/PantryItem';
-import AddPantryCategory from './AddPantryCategory/AddPantryCategory';
-import AddPantryItem from './AddPantryItem/AddPantryItem';
 import './Pantry.css';
 
 class Pantry extends Component {
@@ -31,7 +26,7 @@ class Pantry extends Component {
             name: "cheese",
             category_id: 1,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         },
         {
@@ -39,7 +34,7 @@ class Pantry extends Component {
             name: "milk",
             category_id: 1,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         },
         {
@@ -47,7 +42,7 @@ class Pantry extends Component {
             name: "flour",
             category_id: 2,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         },
         {
@@ -55,7 +50,7 @@ class Pantry extends Component {
             name: "canned tuna",
             category_id: 3,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         }
     ];

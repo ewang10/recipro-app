@@ -7,7 +7,6 @@ import './PantryItem.css';
 class PantryItem extends Component {
     render() {
         const { item } = this.props;
-        console.log(item.length)
         return (
             <div className="PantryItem">
                 <h4>

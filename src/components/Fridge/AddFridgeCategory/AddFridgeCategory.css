@@ -1,10 +1,37 @@
+.AddFridgeCategory > h3 {
+    text-align: center;
+}
+
 .AddFridgeCategory > form {
     display: flex;
     flex-direction: column;
     padding: 15px;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .AddFridgeCategory > form > label,
 .AddFridgeCategory > form > input {
     margin-bottom: 10px;
+}
+
+.AddFridgeCategory > form > input {
+    padding: 5px 7px;
+}
+
+.AddFridgeCategory > form > button {
+    padding: 5px 7px;
+    width: 100px;
+}
+
+@media screen and (min-width: 568px) {
+    .AddFridgeCategory > form {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .AddFridgeCategory > form {
+        width: 30%;
+    }
 }

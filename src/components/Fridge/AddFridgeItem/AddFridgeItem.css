@@ -1,5 +1,11 @@
+.AddFridgeItem > h3 {
+    text-align: center;
+}
+
 .AddFridgeItem > form {
     padding: 15px;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .AddFridgeItem > form > label,
@@ -11,10 +17,32 @@
     width: 100%;
 }
 
+.AddFridgeItem > form > input,
+#itemCategory, #item-content {
+    padding: 5px 7px;
+}
+
 #itemCategory > option {
     width: 100%;
 }
 
 #item-content {
     height: 80px;
+}
+
+.AddFridgeItem > form > button {
+    padding: 5px 7px;
+    width: 100px;
+}
+
+@media screen and (min-width: 568px) {
+    .AddFridgeItem > form {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .AddFridgeItem > form {
+        width: 30%;
+    }
 }

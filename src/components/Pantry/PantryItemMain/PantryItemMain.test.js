@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PantryItemMain from './PantryItemMain';
+import ItemMain from './ItemMain';
 
-describe('PantryItemMain Component', () => {
+describe('ItemMain Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<PantryItemMain />, div);
+    ReactDOM.render(<ItemMain />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });

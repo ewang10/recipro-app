@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import CategoryNav from '../Pantry/CategoryNav/CategoryNav';
-
+import { Link } from 'react-router-dom';
+import FridgeCategoryNav from '../Fridge/FridgeCategoryNav/FridgeCategoryNav';
 import FridgeFilter from './FridgeFilter/FridgeFilter';
-import FridgeItemMain from './FridgeItemMain/FridgeItemMain';
-import AddFridgeCategory from './AddFridgeCategory/AddFridgeCategory';
-import AddFridgeItem from './AddFridgeItem/AddFridgeItem';
+
 import './Fridge.css';
 
 class Fridge extends Component {
@@ -30,7 +27,7 @@ class Fridge extends Component {
             name: "cheese",
             category_id: 1,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         },
         {
@@ -38,7 +35,7 @@ class Fridge extends Component {
             name: "milk",
             category_id: 1,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         },
         {
@@ -46,7 +43,7 @@ class Fridge extends Component {
             name: "flour",
             category_id: 2,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         },
         {
@@ -54,7 +51,7 @@ class Fridge extends Component {
             name: "canned tuna",
             category_id: 3,
             modified: new Date(),
-            expiration_date: new Date(),
+            expiration_date: "2017-11-1",
             note: "some note..."
         }
     ];
@@ -62,62 +59,28 @@ class Fridge extends Component {
     handleSideNav() {
         return (
             <>
-                <Route
-                    path="/fridge"
-                    render={() =>
-                        <CategoryNav
-                            categories={this.categories}
-                        />
-                    }
-                />
-                <Route
-                    path="/fridge-category/:category_id"
-                    render={() =>
-                        <CategoryNav
-                            categories={this.categories}
-                        />
-                    }
-                />
-  
+                <section>
+                    <FridgeCategoryNav
+                        categories={this.categories}
+                    />
+                </section>
+
             </>
         )
     }
     handleMain() {
         return (
             <>
-                <Route
-                    path="/fridge"
-                    render={() =>
-                        <FridgeFilter
-                            categories={this.categories}
-                            items={this.items}
-                        />
-                    }
-                />
-                <Route
-                    path="/fridge-category/:category_id"
-                    render={() =>
-                        <FridgeFilter
-                            categories={this.categories}
-                            items={this.items}
-                        />
-                    }
-                />
+                <section>
+                    <FridgeFilter
+                        categories={this.categories}
+                        items={this.items}
+                    />
+                </section>
 
 
-                <Route
-                    path="/fridge-item/:item_id"
-                    component={FridgeItemMain}
 
-                />
-                <Route
-                    path="/add-fridge-category"
-                    component={AddFridgeCategory}
-                />
-                <Route
-                    path="/add-fridge-item"
-                    component={AddFridgeItem}
-                />
+                
 
             </>
         )

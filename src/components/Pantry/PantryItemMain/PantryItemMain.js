@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import PantryItem from '../PantryItem/PantryItem';
 import './PantryItemMain.css';
 
 class PantryItemMain extends Component {
     displayItem() {
-        console.log("displaying item...")
+        //console.log("history main ", this.props.history)
+        //console.log("props main ", this.props)
         return (
             <>
-                <PantryItem
-                    item={this.props.item}
-                />
+                <h4>{this.props.item.name}</h4>
                 <div className="expiration-date">
-                    {this.props.item.expiration_date}
+                    Expiration date: {this.props.item.expiration_date}
                 </div>
                 <section className="note">
                     <div className="note-content">
@@ -26,9 +24,9 @@ class PantryItemMain extends Component {
         );
     }
     render() {
-        console.log('props ', this.props.item)
+        //console.log('props ', this.props.item)
         const item = this.props.item ? this.displayItem() : '';
-        console.log("item ", item)
+        //console.log("item ", item)
         return (
             <div className="PantryItemMain wrapper">
                 {item}
@@ -44,7 +42,7 @@ PantryItemMain.defaultProps = {
         name: "cheese",
         category_id: 1,
         modified: new Date(),
-        expiration_date: new Date(),
+        expiration_date: "2017-11-1",
         note: "some note..."
     }
 }

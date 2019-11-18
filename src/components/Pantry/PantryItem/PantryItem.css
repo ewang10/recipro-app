@@ -15,3 +15,16 @@
 .PantryItem > .controller > button {
     padding: 3px;
 }
+
+@media screen and (max-width: 400px) {
+    .PantryItem > .controller > .item-modified-date {
+        font-size: 14px;
+        margin-right: 2px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .PantryItem {
+        width: 60%;
+    }
+}

@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration_form {
+    background-color: rgb(187, 182, 182);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.registration_form > legend {
+    text-align: center;
+}
+
+.registration_form > div {
+    margin-top: 5px;
+}
+
+.registration_form > button {
+    width: 30%;
+    margin-top: 10px;
+    align-self: flex-end;
+    padding: 5px 7px;
+}

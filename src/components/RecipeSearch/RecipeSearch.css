@@ -9,9 +9,6 @@
     height: 100%;
 }
 
-.recipe_search {
-    max-width: 80%;
-}
 
 .recipe_search > label {
     display: block;

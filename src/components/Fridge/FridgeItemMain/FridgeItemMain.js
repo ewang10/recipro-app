@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import FridgeItem from '../FridgeItem/FridgeItem';
 import './FridgeItemMain.css';
 
 class FridgeItemMain extends Component {
     displayItem() {
-        console.log("displaying item...")
         return (
             <>
-                <FridgeItem
-                    item={this.props.item}
-                />
+                <h4>{this.props.item.name}</h4>
                 <div className="expiration-date">
                     {this.props.item.expiration_date}
                 </div>
@@ -26,9 +22,9 @@ class FridgeItemMain extends Component {
         );
     }
     render() {
-        console.log('props ', this.props.item)
+        //console.log('props ', this.props.item)
         const item = this.props.item ? this.displayItem() : '';
-        console.log("item ", item)
+        //console.log("item ", item)
         return (
             <div className="FridgeItemMain wrapper">
                 {item}
@@ -44,7 +40,7 @@ FridgeItemMain.defaultProps = {
         name: "cheese",
         category_id: 1,
         modified: new Date(),
-        expiration_date: new Date(),
+        expiration_date: "2017-11-1",
         note: "some note..."
     }
 }

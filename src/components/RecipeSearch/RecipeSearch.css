@@ -1,0 +1,27 @@
+.wrapper {
+    height: 100%;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.recipe_search {
+    max-width: 80%;
+}
+
+.recipe_search > label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.recipe_search > #search {
+    padding: 5px 10px;
+}
+
+.recipe_search > button {
+    padding: 5px 7px;
+}

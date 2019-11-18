@@ -1,0 +1,39 @@
+.nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(187, 182, 182);
+    height: 60px;
+
+    flex-shrink: 0;
+}
+
+.nav-bottom > .bottom_nav_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-bottom > .bottom_nav_wrapper > div {
+    width: 25%;
+    text-align: center;
+    background-color: grey;
+    padding: 10px 0;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bottom > .bottom_nav_wrapper > div:nth-child(even) {
+    background-color:black;
+    color: white;
+}
+
+.nav > a {
+    color: white;
+}

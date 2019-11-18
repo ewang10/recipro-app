@@ -1,0 +1,29 @@
+.pantry {
+    display: grid;
+    grid-template: "header header" "categories items";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 60px 1fr;
+    padding: 80px 0;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.pantry > header {
+    grid-area: header;
+    text-align: center;
+    margin: 10px;
+}
+
+.pantry > header > h2 {
+    cursor: pointer;
+}
+
+.pantry > .nav-side {
+    grid-area: categories;
+    margin: 10px auto;
+}
+
+.pantry > .item_filter{
+    grid-area: items;
+    margin: 10px;
+}

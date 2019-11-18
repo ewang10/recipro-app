@@ -1,0 +1,37 @@
+
+
+.nav-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(187, 182, 182);
+    height: 60px;
+
+    flex-shrink: 0;
+
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
+.nav-top > h1 {
+    cursor: pointer;
+}
+
+.nav-top > h1 > a {
+    color: white;
+}
+
+.sign_up_in {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign_up_in > a {
+    color: white;
+}

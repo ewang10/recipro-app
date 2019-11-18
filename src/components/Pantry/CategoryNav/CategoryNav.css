@@ -1,0 +1,7 @@
+.CategoryNav > .category {
+    background-color: rgb(187, 182, 182);
+    font-size: 1em;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    text-align: center;
+}

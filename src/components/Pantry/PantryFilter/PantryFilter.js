@@ -30,14 +30,14 @@ class PantryFilter extends Component {
     render() {
         let items;
         if (!this.props.items) {
-            console.log('no items')
+            //console.log('no items')
             items = [];
         } else if (this.props.category) {
-            console.log(this.props.category)
-            console.log('yes category')
+            //console.log(this.props.category)
+            //console.log('yes category')
             items = this.itemFilter();
         } else {
-            console.log('no category')
+            //console.log('no category')
             items = this.noFilter();
         }
         

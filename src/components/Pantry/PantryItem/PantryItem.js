@@ -10,7 +10,7 @@ class PantryItem extends Component {
         return (
             <div className="PantryItem">
                 <h4>
-                    <Link to={`/pantry/pantry-item/${item.id}`}>
+                    <Link to={`/pantry-item/${item.id}`}>
                         {item.name}
                     </Link>
                 </h4>

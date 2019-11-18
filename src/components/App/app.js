@@ -38,14 +38,17 @@ class App extends Component {
           <Route path="/login" component={LoginForm} />
 
 
-
           <Route
-            exact path="/pantry/pantry-category/:category_id"
+            path="/pantry"
+            component={CategoryNav}
+          />
+          <Route
+            path="/pantry/pantry-category/:category_id"
             component={CategoryNav}
           />
 
           <Route
-            exact path="/pantry/pantry-category/:category_id"
+            path="/pantry/pantry-category/:category_id"
             component={PantryFilter}
           />
 

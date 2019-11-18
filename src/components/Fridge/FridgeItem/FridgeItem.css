@@ -1,0 +1,17 @@
+.FridgeItem {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    margin: 5px 7px;
+    padding: 10px;
+}
+
+.FridgeItem > .controller {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.FridgeItem > .controller > button {
+    padding: 3px;
+}

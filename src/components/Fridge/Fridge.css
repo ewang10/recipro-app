@@ -1,0 +1,29 @@
+.fridge {
+    display: grid;
+    grid-template: "header header" "categories items";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 60px 1fr;
+    padding: 80px 0;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.fridge > header {
+    grid-area: header;
+    text-align: center;
+    margin: 10px;
+}
+
+.fridge > header > h2 {
+    cursor: pointer;
+}
+
+.fridge > .nav-side {
+    grid-area: categories;
+    margin: 10px auto;
+}
+
+.fridge > .item_filter{
+    grid-area: items;
+    margin: 10px;
+}

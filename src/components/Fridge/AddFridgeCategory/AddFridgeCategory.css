@@ -1,0 +1,10 @@
+.AddFridgeCategory > form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.AddFridgeCategory > form > label,
+.AddFridgeCategory > form > input {
+    margin-bottom: 10px;
+}

@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
-import './PantryItem.css';
+import './FridgeItem.css';
 
 
-class PantryItem extends Component {
+class FridgeItem extends Component {
     render() {
         const { item } = this.props;
         console.log(item.length)
         return (
-            <div className="PantryItem">
+            <div className="FridgeItem">
                 <h4>
-                    <Link to={`/pantry-item/${item.id}`}>
+                    <Link to={`/fridge-item/${item.id}`}>
                         {item.name}
                     </Link>
                 </h4>
@@ -29,8 +29,8 @@ class PantryItem extends Component {
     }
 }
 
-PantryItem.defaultProps = {
+FridgeItem.defaultProps = {
     item: {}
 }
 
-export default PantryItem;
+export default FridgeItem;

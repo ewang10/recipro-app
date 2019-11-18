@@ -1,9 +1,9 @@
-.AddPantryItem > form {
+.AddFridgeItem > form {
     padding: 15px;
 }
 
-.AddPantryItem > form > label,
-.AddPantryItem > form > input,
+.AddFridgeItem > form > label,
+.AddFridgeItem > form > input,
 #itemCategory, #item-content {
     display: block;
     margin: 0;

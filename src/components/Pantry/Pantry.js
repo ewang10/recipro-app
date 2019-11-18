@@ -63,87 +63,30 @@ class Pantry extends Component {
     handleSideNav() {
         return (
             <>
-                <Route
-                    path="/pantry"
-                    render={() =>
-                        <CategoryNav
-                            categories={this.categories}
-                        />
-                    }
-                />
-                <Route
-                    path="/pantry-category/:category_id"
-                    render={() =>
-                        <CategoryNav
-                            categories={this.categories}
-                        />
-                    }
-                />
-                <Route
-                    path="/pantry-item/:item_id"
-                    component={ItemNav}
-                />
-                <Route
-                    path="/add-pantry-category"
-                    component={ItemNav}
-                />
-                <Route
-                    path="/add-pantry-item"
-                    component={ItemNav}
-                />
+                <section>
+                    <CategoryNav
+                        categories={this.categories}
+                    />
+                </section>
+            
             </>
         )
     }
     handleMain() {
         return (
             <>
-                <Route
-                    path="/pantry"
-                    render={() => 
-                        <PantryFilter
-                            categories={this.categories}
-                            items={this.items}
-                        />
-                    }
-                />
-                <Route
-                    path="/pantry-category/:category_id"
-                    render={() => 
-                        <PantryFilter
-                            categories={this.categories}
-                            items={this.items}
-                        />
-                    }
-                />
-                <Route 
-                    path="/pantry"
-                    component={PantryItem}
-                />
-                <Route 
-                    path="/pantry-category/:category_id"
-                    component={PantryItem}
-                />
-                <Route 
-                    path="/pantry-item/:item_id"
-                    component={PantryItem}
-                />
-                <Route
-                    path="/pantry-item/:item_id"
-                    render={() =>
-                        <PantryItemMain
-                            item={this.items[0]}
-                        />
-                    }
-                />
-                <Route
-                    path="/add-pantry-category"
-                    component={AddPantryCategory}
-                />
-                <Route
-                    path="/add-pantry-item"
-                    component={AddPantryItem}
-                />
-                
+                <section>
+                    <PantryFilter
+                        categories={this.categories}
+                        items={this.items}
+                    />
+                </section>
+
+
+
+
+
+
             </>
         )
     }

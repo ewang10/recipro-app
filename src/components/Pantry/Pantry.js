@@ -4,6 +4,7 @@ import CategoryNav from './CategoryNav/CategoryNav';
 import ItemNav from './ItemNav/ItemNav';
 import PantryFilter from './PantryFilter/PantryFilter';
 import PantryItemMain from './PantryItemMain/PantryItemMain';
+import PantryItem from './PantryItem/PantryItem';
 import AddPantryCategory from './AddPantryCategory/AddPantryCategory';
 import AddPantryItem from './AddPantryItem/AddPantryItem';
 import './Pantry.css';
@@ -114,6 +115,18 @@ class Pantry extends Component {
                         />
                     }
                 />
+                <Route 
+                    path="/pantry"
+                    component={PantryItem}
+                />
+                <Route 
+                    path="/pantry-category/:category_id"
+                    component={PantryItem}
+                />
+                <Route 
+                    path="/pantry-item/:item_id"
+                    component={PantryItem}
+                />
                 <Route
                     path="/pantry-item/:item_id"
                     render={() =>
@@ -130,6 +143,7 @@ class Pantry extends Component {
                     path="/add-pantry-item"
                     component={AddPantryItem}
                 />
+                
             </>
         )
     }

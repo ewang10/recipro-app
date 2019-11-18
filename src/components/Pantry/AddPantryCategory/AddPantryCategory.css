@@ -1,0 +1,10 @@
+.AddPantryCategory > form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.AddPantryCategory > form > label,
+.AddPantryCategory > form > input {
+    margin-bottom: 10px;
+}

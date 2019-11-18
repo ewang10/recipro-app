@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import './PantryItem.css';
+import PantryItemMain from '../PantryItemMain/PantryItemMain';
 
 class PantryItem extends Component {
     render() {
@@ -24,6 +25,10 @@ class PantryItem extends Component {
             </div>
         )
     }
+}
+
+PantryItem.defaultProps = {
+    item: {}
 }
 
 export default PantryItem;

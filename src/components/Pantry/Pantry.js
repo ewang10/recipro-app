@@ -56,19 +56,7 @@ class Pantry extends Component {
     ];
 
     handleSideNav() {
-        /*
-        let comp;
-        if (this.props.match.path === "/pantry" ||
-            this.props.match.path === "/pantry-category/:category_id") {
-            comp = (
-                <section>
-                    <CategoryNav
-                        categories={this.categories}
-                    />
-                </section>
-            );
-        }
-        */
+
         return (
             <>
                 <section>

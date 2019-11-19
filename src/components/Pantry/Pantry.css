@@ -14,8 +14,9 @@
     margin: 10px;
 }
 
-.pantry > header > h2 {
+.pantry > header > h2 > a {
     cursor: pointer;
+    color: #146642;
 }
 
 .pantry > .nav-side {

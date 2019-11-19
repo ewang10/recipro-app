@@ -1,11 +1,28 @@
 .FridgeCategoryNav > .category {
-    background-color: rgb(187, 182, 182);
+    background-color: #146642;
     font-size: 1em;
     margin-bottom: 5px;
     padding: 5px 10px;
     text-align: center;
 }
 
+.FridgeCategoryNav > .category a {
+    color: white;
+}
+
+.FridgeCategoryNav > .category a:hover {
+    color: #B31A00;
+}
+
 .FridgeCategoryNav button {
-    padding: 5px 7px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+    background-color: #B31A00;
+    border: none;
+}
+
+.FridgeCategoryNav button:hover {
+    color: #146642;
 }

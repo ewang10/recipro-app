@@ -7,7 +7,15 @@
 
 .RecipeDetail > h4 {
     font-size: 22px;
+    
+}
 
+.RecipeDetail a {
+    color: #146642;
+}
+
+.RecipeDetail a:hover {
+    color: #B31A00;
 }
 
 .RecipeDetail > .img-container {

@@ -63,6 +63,7 @@ class Recipe extends Component {
         )
         return (
             <div className="Recipe">
+                <h2>Recipe</h2>
                 {recipes}
             </div>
         );

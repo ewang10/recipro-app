@@ -21,6 +21,7 @@ class Grocery extends Component {
         )
         return (
             <div className="Grocery">
+                <h2>Grocery</h2>
                 {items}
             </div>
         );

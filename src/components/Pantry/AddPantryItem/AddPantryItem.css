@@ -1,5 +1,6 @@
 .AddPantryItem > h3 {
     text-align: center;
+    color: #146642;
 }
 
 .AddPantryItem > form {
@@ -15,6 +16,10 @@
     margin: 0;
     margin-bottom: 10px;
     width: 100%;
+}
+
+.AddPantryItem > form > label {
+    font-weight: 500;
 }
 
 .AddPantryItem > form > input,
@@ -33,6 +38,15 @@
 .AddPantryItem > form > button {
     padding: 5px 7px;
     width: 100px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+    background-color: #B31A00;
+}
+
+.AddPantryItem > form > button:hover {
+    color: #146642;
 }
 
 @media screen and (min-width: 568px) {

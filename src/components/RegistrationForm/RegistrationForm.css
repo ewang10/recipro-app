@@ -5,8 +5,13 @@
     align-items: center;
 }
 
+.RegistrationForm legend {
+    font-weight: 500;
+    color: white;
+}
+
 .registration_form {
-    background-color: rgb(187, 182, 182);
+    background-color: #146642;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -21,9 +26,22 @@
     margin-top: 5px;
 }
 
+.registration_form > div > label {
+    color: white;
+}
+
 .registration_form > button {
     width: 30%;
     margin-top: 10px;
     align-self: flex-end;
     padding: 5px 7px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+    background-color: #B31A00;
+}
+
+.registration_form > button:hover {
+    color: #146642;
 }

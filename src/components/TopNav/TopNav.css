@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(187, 182, 182);
+    background-color: #006F46;
     height: 60px;
 
     flex-shrink: 0;
@@ -27,6 +27,10 @@
     color: white;
 }
 
+.nav-top > h1 > a:hover {
+    color: #B31A00;
+}
+
 .sign_up_in {
     display: flex;
     flex-direction: column;
@@ -34,4 +38,18 @@
 
 .sign_up_in > a {
     color: white;
+    font-weight: 500;
+}
+
+.sign_up_in > a:hover {
+    color: #B31A00;
+}
+
+@media screen and (min-width: 568px) {
+    .sign_up_in {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 130px;
+    }
 }

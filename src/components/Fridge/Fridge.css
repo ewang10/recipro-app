@@ -14,8 +14,9 @@
     margin: 10px;
 }
 
-.fridge > header > h2 {
+.fridge > header > h2 > a {
     cursor: pointer;
+    color: #146642;
 }
 
 .fridge > .nav-side {

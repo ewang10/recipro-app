@@ -56,7 +56,6 @@ class Pantry extends Component {
     ];
 
     handleSideNav() {
-
         return (
             <>
                 <section>
@@ -64,13 +63,10 @@ class Pantry extends Component {
                         categories={this.categories}
                     />
                 </section>
-
             </>
         )
     }
     handleMain() {
-
-
         return (
             <>
                 <section>
@@ -79,12 +75,6 @@ class Pantry extends Component {
                         items={this.items}
                     />
                 </section>
-
-
-
-
-
-
             </>
         )
     }

@@ -11,10 +11,12 @@
 
 .PantryItemMain > h4 {
     font-size: 25px;
+    color: #146642;
 }
 
 .PantryItemMain > .expiration-date {
     padding: 10px 15px;
+    font-weight: 500;
 }
 
 .PantryItemMain > .note {
@@ -24,9 +26,10 @@
 
 .PantryItemMain > .note > .note-content {
     width: 100%;
-    background-color: grey;
+    background-color: #CB4B2E;
     min-height: 150px;
     padding: 10px 15px;
+    color: white;
 }
 
 .PantryItemMain > .note > .note-controller {
@@ -39,6 +42,15 @@
 
 .PantryItemMain > .note > .note-controller > button {
   padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 700;
+  background-color: #B31A00;
+  color: white;
+}
+
+.PantryItemMain > .note > .note-controller > button:hover {
+    color: #146642;
 }
 
 @media screen and (min-width: 568px) {

@@ -7,7 +7,7 @@ class FridgeItemMain extends Component {
             <>
                 <h4>{this.props.item.name}</h4>
                 <div className="expiration-date">
-                    {this.props.item.expiration_date}
+                    Expiration date: {this.props.item.expiration_date}
                 </div>
                 <section className="note">
                     <div className="note-content">

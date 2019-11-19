@@ -9,6 +9,14 @@
     align-items: center;
 }
 
+.FridgeItemMain > h4 {
+    font-size: 25px;
+}
+
+.FridgeItemMain > .expiration-date {
+    padding: 10px 15px;
+}
+
 .FridgeItemMain > .note {
     width: 75%;
     margin-top: 25px;
@@ -17,7 +25,7 @@
 .FridgeItemMain > .note > .note-content {
     width: 100%;
     background-color: grey;
-    min-height: 100px;
+    min-height: 150px;
     padding: 10px 15px;
 }
 
@@ -31,4 +39,19 @@
 
 .FridgeItemMain > .note > .note-controller > button {
   padding: 5px 10px;
+}
+
+@media screen and (min-width: 568px) {
+    .FridgeItemMain > .note {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    @media screen and (min-height: 900px) {
+        .FridgeItemMain > .note {
+            width: 40%;
+            height: 200px;
+        }
+    }
 }

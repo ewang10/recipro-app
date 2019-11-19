@@ -19,6 +19,9 @@ class AddFridgeItem extends Component {
                         id="itemName"
                         aria-required="true"
                         required />
+                    <label htmlFor="itemCategory">
+                        Category
+                    </label>
                     <select
                         name="itemCategory"
                         id="itemCategory"
@@ -28,7 +31,7 @@ class AddFridgeItem extends Component {
                         {options}
                     </select>
                     <lable htmlFor="expiration-date">
-                        Expiration date:
+                        Expiration date
                     </lable>
                     <input type="date" required />
                     <label htmlFor="item-content">

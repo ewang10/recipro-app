@@ -20,7 +20,7 @@ class AddPantryItem extends Component {
                         aria-required="true"
                         required />
                     <label htmlFor="itemCategory">
-                        Category: 
+                        Category 
                     </label>
                     <select
                         name="itemCategory"
@@ -31,7 +31,7 @@ class AddPantryItem extends Component {
                         {options}
                     </select>
                     <lable htmlFor="expiration-date">
-                        Expiration date:
+                        Expiration date
                     </lable>
                     <input type="date" required />
                     <label htmlFor="item-content">

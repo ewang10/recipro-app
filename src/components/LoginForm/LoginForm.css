@@ -45,3 +45,7 @@
 .login_form > button:hover {
     color: #146642;
 }
+
+.login_form > .alert {
+    color: red;
+}

@@ -36,12 +36,14 @@
     flex-direction: column;
 }
 
-.sign_up_in > a {
+.sign_up_in > a,
+.sign_out > a {
     color: white;
     font-weight: 500;
 }
 
-.sign_up_in > a:hover {
+.sign_up_in > a:hover,
+.sign_out > a:hover {
     color: #B31A00;
 }
 

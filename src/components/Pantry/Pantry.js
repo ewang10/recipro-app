@@ -2,65 +2,36 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import CategoryNav from './CategoryNav/CategoryNav';
 import PantryFilter from './PantryFilter/PantryFilter';
+import PantryContext from '../../contexts/PantryContext';
+import PantryCategoryApiService from '../../services/pantry_category-api-service';
+import PantryItemApiService from '../../services/pantry_item-api-service';
 import './Pantry.css';
 
 class Pantry extends Component {
-    categories = [
-        {
-            id: 1,
-            name: "Dairy"
-        },
-        {
-            id: 2,
-            name: "Baking"
-        },
-        {
-            id: 3,
-            name: "Canned Foods"
-        }
-    ];
+    static contextType = PantryContext;
 
-    items = [
-        {
-            id: 1,
-            name: "cheese",
-            category_id: 1,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        },
-        {
-            id: 2,
-            name: "milk",
-            category_id: 1,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        },
-        {
-            id: 3,
-            name: "flour",
-            category_id: 2,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        },
-        {
-            id: 4,
-            name: "canned tuna",
-            category_id: 3,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        }
-    ];
+    componentDidMount() {
+        this.context.clearError();
+        PantryCategoryApiService.getCategories()
+            .then(categories => {
+                console.log('data retrieved ', categories);
+                this.context.setCategories(categories)
+                console.log('data settted ', this.context.categories)
+            })
+            .catch(error => this.context.setError(error));
+        
+        PantryItemApiService.getItems()
+            .then(items => this.context.setItems(items))
+            .catch(error => this.context.setError(error));
+    }
 
     handleSideNav() {
+        //console.log(this.context.categories);
         return (
             <>
                 <section>
                     <CategoryNav
-                        categories={this.categories}
+                        categories={this.context.categories}
                     />
                 </section>
             </>
@@ -71,8 +42,8 @@ class Pantry extends Component {
             <>
                 <section>
                     <PantryFilter
-                        categories={this.categories}
-                        items={this.items}
+                        categories={this.context.categories}
+                        items={this.context.items}
                     />
                 </section>
             </>

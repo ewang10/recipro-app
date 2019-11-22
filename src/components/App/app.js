@@ -22,6 +22,11 @@ import AddPantryItem from '../Pantry/AddPantryItem/AddPantryItem';
 import FridgeItemMain from '../Fridge/FridgeItemMain/FridgeItemMain';
 import AddFridgeCategory from '../Fridge/AddFridgeCategory/AddFridgeCategory';
 import AddFridgeItem from '../Fridge/AddFridgeItem/AddFridgeItem';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
+import PrivateRoute from '../Utils/PrivateRoute';
+import IdleService from '../../services/idle-service';
+import AuthApiService from '../../services/auth-api-service';
+import TokenService from '../../services/token-service';
 import './app.css';
 
 class App extends Component {
@@ -79,54 +84,96 @@ class App extends Component {
       ]
     }
   ];
+  componentDidMount() {
+    // Set the idle callback function to logout a user
+    //from being idle
+    IdleService.setIdleCallback(this.logoutFromIdle);
+
+    //If the user is logged in
+    if (TokenService.hasAuthToken()) {
+
+      // Regist the event listeners, so that when a user
+      // interacts with the page the event listener will fire
+      IdleService.registerIdleTimerResets();
+
+      // Queue the callback function to have token refresh
+      // just before token expires
+      TokenService.queueCallbackBeforeExpiry(() => {
+        AuthApiService.postRefreshToken()
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    // Unregister event listeners that checks for user interactivity
+    IdleService.unRegisterIdleResets();
+
+    // Remove refresh token request
+    TokenService.clearCallbackBeforeExpiry();
+  }
+
+  logoutFromIdle = () => {
+    TokenService.clearAuthToken();
+
+    // Clear callback go refresh api, and unregister event listners
+    // that tracks user interactivity
+    TokenService.clearCallbackBeforeExpiry();
+    IdleService.unRegisterIdleResets();
+    /*
+      react won't know the token has been removed from local storage,
+      so we need to tell React to rerender
+    */
+    this.forceUpdate();
+  }
+
   render() {
     return (
       <div className="app">
         <TopNav />
         <main>
           <Route exact path="/" component={RecipeSearch} />
-          <Route path="/pantry" component={Pantry} />
-          <Route path="/fridge" component={Fridge} />
-          <Route path="/grocery" component={Grocery} />
-          <Route path="/recipe" component={Recipe} />
-          <Route 
-            path="/recipe-item/:recipe_id" 
+          <PrivateRoute path="/pantry" component={Pantry} />
+          <PrivateRoute path="/fridge" component={Fridge} />
+          <PrivateRoute path="/grocery" component={Grocery} />
+          <PrivateRoute path="/recipe" component={Recipe} />
+          <PrivateRoute
+            path="/recipe-item/:recipe_id"
             render={() =>
               <RecipeDetail
                 recipes={this.recipes}
               />
-            } 
+            }
           />
-          <Route path="/register" component={RegistrationForm} />
-          <Route path="/login" component={LoginForm} />
+          <PublicOnlyRoute path="/register" component={RegistrationForm} />
+          <PublicOnlyRoute path="/login" component={LoginForm} />
 
 
 
-          <Route
+          <PrivateRoute
             exact path="/pantry-item/:item_id"
             component={PantryItemMain}
 
           />
-          <Route
+          <PrivateRoute
             exact path="/add-pantry-item"
             component={AddPantryItem}
           />
-          <Route
+          <PrivateRoute
             exact path="/add-pantry-category"
             component={AddPantryCategory}
           />
 
 
-          <Route
+          <PrivateRoute
             path="/fridge-item/:item_id"
             component={FridgeItemMain}
 
           />
-          <Route
+          <PrivateRoute
             path="/add-fridge-category"
             component={AddFridgeCategory}
           />
-          <Route
+          <PrivateRoute
             path="/add-fridge-item"
             component={AddFridgeItem}
           />

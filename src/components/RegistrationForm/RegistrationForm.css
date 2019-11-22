@@ -45,3 +45,7 @@
 .registration_form > button:hover {
     color: #146642;
 }
+
+.registration_form > .alert {
+    color: red;
+}

@@ -1,34 +1,22 @@
 import React, { Component } from 'react';
 
-const FridgeContext = React.createContext({
-    categories: [],
-    items: [],
-    updateCategory: () => { },
-    addCategory: () => { },
-    updateItem: () => { },
-    deleteItem: () => { },
-    patchItem: () => { },
-    addItem: () => { },
-    category: '',
-    item: '',
-    setCategories: () => { },
-    setItems: () => { },
-    error: null,
+const GroceryContext = React.createContext({
+    groceries: [],
     setError: () => { },
     clearError: () => { },
-    reset: () => { }
+    addGrocery: () => { },
+    deleteGrocery: () => { },
+    error: null,
+    setGroceries: () => { }
 });
 
-export default FridgeContext;
+export default GroceryContext;
 
-export class FridgeProvider extends Component {
+export class GroceryProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            categories: [],
-            items: [],
-            selectedCategory: '',
-            selectedItem: ''
+            groceries: []
         }
     }
 
@@ -41,81 +29,38 @@ export class FridgeProvider extends Component {
         this.setState({ error: null });
     }
 
-    setCategories = categories => {
-        this.setState({ categories });
+    setGroceries = groceries => {
+        this.setState({ groceries });
     }
 
-    setItems = items => {
-        this.setState({ items });
-    }
-
-    updateSelectedCategory = category => {
-        this.setState({ selectedCategory: category });
-    }
-
-    updateSelectedItem = item => {
-        this.setState({ selectedItem: item });
-    }
-
-    addCategory = category => {
+    addGrocery = grocery => {
         this.setState({
-            categories: [...this.state.categories, category]
+            groceries: [...this.state.groceries, grocery]
         });
     }
 
-    addItem = item => {
-        this.setState({
-            items: [...this.state.items, item]
-        });
-    }
-
-    deleteItem = itemId => {
-        const newItems = this.state.items.filter(item =>
-            item.id !== itemId
+    deleteGrocery = groceryId => {
+        const newGroceries = this.state.groceries.filter(grocery =>
+            grocery.id !== groceryId
         );
-        this.setState({ items: newItems });
-    }
-
-    patchItem = (itemId, updatedItem) => {
-        const newItems = this.state.items.map(item =>
-            (itemId === item.id)
-                ? updatedItem
-                : item
-        );
-        this.setState({items: newItems});
-    }
-
-    resetState = () => {
-        this.setState({
-            selectedFolder: '',
-            selectedNote: ''
-        });
+        this.setState({ groceries: newGroceries });
     }
 
     render() {
-        const contextValue = {
-            categories: this.state.categories,
-            items: this.state.items,
-            updateCategory: this.updateSelectedCategory,
-            addCategory: this.addCategory,
-            category: this.state.selectedCategory,
-            updateItem: this.updateSelectedItem,
-            addItem: this.addItem,
-            deleteItem: this.deleteItem,
-            patchItem: this.patchItem,
-            item: this.state.selectedItem,
-            setCategories: this.setCategories,
-            setItems: this.setItems,
-            error: this.state.error,
+        const contextValues = {
+            groceries: this.state.groceries,
             setError: this.setError,
             clearError: this.clearError,
-            reset: this.resetState
+            addGrocery: this.addGrocery,
+            deleteGrocery: this.deleteGrocery,
+            error: this.state.error,
+            setGroceries: this.setGroceries,
         }
 
         return (
-            <FridgeContext.Provider value={contextValue}>
+            <GroceryContext.Provider value={contextValues}>
                 {this.props.children}
-            </FridgeContext.Provider>
+            </GroceryContext.Provider>
         );
     }
 }

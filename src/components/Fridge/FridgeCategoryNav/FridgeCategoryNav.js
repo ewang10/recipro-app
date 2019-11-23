@@ -15,7 +15,7 @@ class FridgeCategoryNav extends Component {
                         onClick={() => this.context.updateCategory(category)}
                     >
                         <h4>
-                            <NavLink to={`/fridge/fridge-category/${category.id}`}>
+                            <NavLink to={`/fridge-category/${category.id}`}>
                                 {category.name}
                             </NavLink>
                         </h4>

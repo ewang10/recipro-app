@@ -9,11 +9,11 @@ import { FridgeProvider } from './contexts/FridgeContext';
 
 ReactDOM.render(
     <BrowserRouter>
-        <PantryProvider>
+
 
                 <App />
 
-        </PantryProvider>
+
     </BrowserRouter>,
     document.getElementById('root'));
 

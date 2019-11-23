@@ -13,7 +13,7 @@ class PantryItemMain extends Component {
         PantryItemApiService.deleteItem(itemId)
             .then(() => {
                 cb(itemId);
-                this.props.history.push('/');
+                this.props.history.push('/pantry');
             })
             .catch(error => this.context.setError(error));
     }

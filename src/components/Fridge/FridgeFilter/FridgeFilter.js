@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FridgeItem from '../FridgeItem/FridgeItem';
-import FridgeItemApiService from '../../../services/fridge_item-api-service';
 import FridgeContext from '../../../contexts/FridgeContext';
 import './FridgeFilter.css';
 
 class FridgeFilter extends Component {
     static contextType = FridgeContext;
     noFilter() {
-        const items = this.props.items
+        const items = this.context.items
             .map((item, i) => (
                 <FridgeItem 
                     item={item}
@@ -31,20 +30,6 @@ class FridgeFilter extends Component {
     }
 
     render() {
-        /*
-        let items;
-        if (!this.props.items) {
-            //console.log('no items')
-            items = [];
-        } else if (this.props.category) {
-            //console.log(this.props.category)
-            //console.log('yes category')
-            items = this.itemFilter();
-        } else {
-            //console.log('no category')
-            items = this.noFilter();
-        }
-        */
         const items = this.context.category
             ? this.itemFilter()
             : this.noFilter();

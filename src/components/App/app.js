@@ -22,6 +22,7 @@ import EditPantryItem from '../Pantry/EditIPantryItem/EditIPantryItem';
 import FridgeItemMain from '../Fridge/FridgeItemMain/FridgeItemMain';
 import AddFridgeCategory from '../Fridge/AddFridgeCategory/AddFridgeCategory';
 import AddFridgeItem from '../Fridge/AddFridgeItem/AddFridgeItem';
+import EditFridgeItem from '../Fridge/EditFridgeItem/EditFridgeItem';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import PrivateRoute from '../Utils/PrivateRoute';
 import IdleService from '../../services/idle-service';
@@ -29,7 +30,9 @@ import AuthApiService from '../../services/auth-api-service';
 import TokenService from '../../services/token-service';
 import './app.css';
 
-//import { FridgeProvider } from '../../contexts/FridgeContext';
+import { FridgeProvider } from '../../contexts/FridgeContext';
+import { PantryProvider } from '../../contexts/PantryContext';
+import { GroceryProvider } from '../../contexts/GroceryContext';
 
 class App extends Component {
   recipes = [
@@ -134,9 +137,9 @@ class App extends Component {
         <TopNav />
         <main>
           <Route exact path="/" component={RecipeSearch} />
-          <PrivateRoute path="/pantry" component={Pantry} />
-          <PrivateRoute path="/fridge" component={Fridge} />
-          <PrivateRoute path="/grocery" component={Grocery} />
+
+
+
           <PrivateRoute path="/recipe" component={Recipe} />
           <PrivateRoute
             path="/recipe-item/:recipe_id"
@@ -149,47 +152,61 @@ class App extends Component {
           <PublicOnlyRoute path="/register" component={RegistrationForm} />
           <PublicOnlyRoute path="/login" component={LoginForm} />
 
-          <PrivateRoute
-            path="/pantry-category/:id"
-            component={Pantry}
-          />
+          <GroceryProvider>
+            <PrivateRoute path="/grocery" component={Grocery} />
+          </GroceryProvider>
 
-          <PrivateRoute
-            path="/pantry-item/:item_id"
-            component={PantryItemMain}
+          <PantryProvider>
+            <PrivateRoute path="/pantry" component={Pantry} />
+            <PrivateRoute
+              path="/pantry-category/:id"
+              component={Pantry}
+            />
 
-          />
-          <PrivateRoute
-            path="/add-pantry-item"
-            component={AddPantryItem}
-          />
-          <PrivateRoute
-            path="/add-pantry-category"
-            component={AddPantryCategory}
-          />
-          <PrivateRoute
-            path='/edit-pantry-item/:item_id'
-            component={EditPantryItem}
-          />
+            <PrivateRoute
+              path="/pantry-item/:item_id"
+              component={PantryItemMain}
 
-          <PrivateRoute
-            path="/fridge/fridge-category"
-            component={Fridge}
-          />
+            />
+            <PrivateRoute
+              path="/add-pantry-item"
+              component={AddPantryItem}
+            />
+            <PrivateRoute
+              path="/add-pantry-category"
+              component={AddPantryCategory}
+            />
+            <PrivateRoute
+              path='/edit-pantry-item/:item_id'
+              component={EditPantryItem}
+            />
+          </PantryProvider>
 
-          <PrivateRoute
-            path="/fridge-item/:item_id"
-            component={FridgeItemMain}
+          <FridgeProvider>
+            <PrivateRoute path="/fridge" component={Fridge} />
+            <PrivateRoute
+              path="/fridge-category/:id"
+              component={Fridge}
+            />
 
-          />
-          <PrivateRoute
-            path="/add-fridge-category"
-            component={AddFridgeCategory}
-          />
-          <PrivateRoute
-            path="/add-fridge-item"
-            component={AddFridgeItem}
-          />
+            <PrivateRoute
+              path="/fridge-item/:item_id"
+              component={FridgeItemMain}
+
+            />
+            <PrivateRoute
+              path="/add-fridge-category"
+              component={AddFridgeCategory}
+            />
+            <PrivateRoute
+              path="/add-fridge-item"
+              component={AddFridgeItem}
+            />
+            <PrivateRoute
+              path='/edit-fridge-item/:item_id'
+              component={EditFridgeItem}
+            />
+          </FridgeProvider>
         </main>
         <BottomNav />
       </div>

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import FridgeContext from '../../../contexts/FridgeContext';
 import ValidationError from '../../ValidationError/ValidationError';
 import FridgeItemApiService from '../../../services/fridge_item-api-service';
-import './AddFridgeItem.css';
+import '../AddFridgeItem/AddFridgeItem.css';
 
-class AddFridgeItem extends Component {
+class EditFridgeItem extends Component {
     static contextType = FridgeContext;
-
     constructor(props) {
         super(props);
         this.state = {
@@ -26,6 +25,29 @@ class AddFridgeItem extends Component {
         };
     }
 
+    componentDidMount() {
+        const itemId = this.context.item.id;
+        this.context.clearError();
+        FridgeItemApiService.getItem(itemId)
+            .then(res => {
+                this.setState({
+                    itemName: {
+                        value: res.name
+                    },
+                    category: {
+                        value: this.context.categories.find(
+                            category => category.id === res.categoryid
+                        ).name
+                    },
+                    expiration: {
+                        value: res.expiration
+                    },
+                    note: res.note
+                });
+            })
+            .catch(error => this.context.setError(error));
+    }
+
     findCategoryId(name) {
         const category = this.context.categories.find(category =>
             category.name === name
@@ -37,22 +59,17 @@ class AddFridgeItem extends Component {
     handleSubmit(event) {
         event.preventDefault();
         this.context.clearError();
+        const itemId = this.context.item.id;
         const { itemName, itemCategory, expirationDate, itemContent } = event.target;
-        const newItem = {
+        const updateItem = {
             name: itemName.value,
             expiration: expirationDate.value,
             note: itemContent.value,
             categoryid: this.findCategoryId(itemCategory.value)
         };
-        FridgeItemApiService.postItem(newItem)
+        FridgeItemApiService.patchItem(itemId, updateItem)
             .then(data => {
-                itemName.value = '';
-                expirationDate.value = '';
-                itemContent.value = '';
-                itemCategory.value = '';
-
-                console.log('category added ', data.categoryid)
-                this.context.addItem(data);
+                this.context.patchItem(itemId, updateItem);
                 this.props.history.push('/fridge');
             })
             .catch(error => this.context.setError(error));
@@ -98,7 +115,6 @@ class AddFridgeItem extends Component {
 
     validateCategory() {
         const category = this.state.category.value.trim();
-        //console.log('new category ', category)
         if (category === 'None') {
             return 'Category is required';
         }
@@ -113,13 +129,14 @@ class AddFridgeItem extends Component {
 
     render() {
         const { error } = this.context;
+        const { itemName, category, expiration, note } = this.state;
         const options = this.context.categories
             .map((category, i) =>
                 <option key={i} value={category.name}>{category.name}</option>
             )
         return (
-            <div className="AddFridgeItem">
-                <h3>Create an item</h3>
+            <div className="AddPantryItem">
+                <h3>Update item</h3>
                 <form onSubmit={e => this.handleSubmit(e)}>
                     <div className='alert'>
                         {error && <p className='error'>{error.message}</p>}
@@ -130,6 +147,7 @@ class AddFridgeItem extends Component {
                     <input
                         name="itemName"
                         id="itemName"
+                        value={itemName.value}
                         aria-required="true"
                         aria-invalid="true"
                         aria-describedby="validate"
@@ -149,7 +167,7 @@ class AddFridgeItem extends Component {
                         aria-describedby="validate"
                         onChange={e => this.updateCategory(e.target.value)}
                         required>
-                        <option value="None">...</option>
+                        <option value={category.value}>{category.value}</option>
                         {options}
                     </select>
                     {this.state.category.touched && (
@@ -158,8 +176,10 @@ class AddFridgeItem extends Component {
                     <lable htmlFor="expirationDate">
                         Expiration date
                     </lable>
-                    <input type="date"
+                    <input
+                        type="date"
                         name="expirationDate"
+                        value={expiration.value}
                         aria-required="true"
                         aria-invalid="true"
                         aria-describedby="validate"
@@ -174,6 +194,7 @@ class AddFridgeItem extends Component {
                     <textarea
                         id="itemContent"
                         name="itemContent"
+                        value={note}
                         onChange={e => this.updateNote(e.target.value)}
                     />
                     <button
@@ -184,7 +205,7 @@ class AddFridgeItem extends Component {
                             this.validateCategory()
                         }
                     >
-                        Add item
+                        Update item
                     </button>
                 </form>
             </div>
@@ -192,8 +213,4 @@ class AddFridgeItem extends Component {
     }
 }
 
-AddFridgeItem.defaultProps = {
-    categories: []
-}
-
-export default AddFridgeItem;
+export default EditFridgeItem;

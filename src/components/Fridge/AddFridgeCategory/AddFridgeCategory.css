@@ -11,6 +11,11 @@
     margin: 0 auto;
 }
 
+.AddFridgeCategory > form > .alert {
+    color: red;
+    margin: 5px 0;
+}
+
 .AddFridgeCategory > form > label,
 .AddFridgeCategory > form > input {
     margin-bottom: 10px;

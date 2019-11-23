@@ -10,14 +10,17 @@ import './Pantry.css';
 class Pantry extends Component {
     static contextType = PantryContext;
 
+    /*
     state = {
         refresh: false
     }
 
-    updateRefresh = () => {
-        this.setState({refresh: !this.state.refresh})
+    updateRefresh () {
+        const newRefresh = !this.state.refresh;
+        console.log('new refresh  ', newRefresh)
+        this.setState({refresh: newRefresh})
     }
-
+    */
     componentDidMount() {
         this.context.clearError();
         PantryCategoryApiService.getCategories()
@@ -52,7 +55,8 @@ class Pantry extends Component {
                     <PantryFilter
                         categories={this.context.categories}
                         items={this.context.items}
-                        refresh={this.updateRefresh}
+                        //refresh={this.state.refresh}
+                        //updateRefresh={() => this.updateRefresh()}
                     />
                 </section>
             </>
@@ -62,7 +66,7 @@ class Pantry extends Component {
         return (
             <div className="pantry">
                 <header>
-                    <h2 onClick={this.updateRefresh}>
+                    <h2 /*onClick={() => this.updateRefresh()}*/>
                         <Link to="/pantry">Pantry</Link>
                     </h2>
                 </header>

@@ -9,9 +9,14 @@
     margin: 0 auto;
 }
 
+.AddFridgeItem > form > .alert {
+    color: red;
+    margin: 0 0 10px;
+}
+
 .AddFridgeItem > form > label,
 .AddFridgeItem > form > input,
-#itemCategory, #item-content {
+#itemCategory, #itemContent {
     display: block;
     margin: 0;
     margin-bottom: 10px;
@@ -23,7 +28,7 @@
 }
 
 .AddFridgeItem > form > input,
-#itemCategory, #item-content {
+#itemCategory, #itemContent {
     padding: 5px 7px;
 }
 
@@ -31,7 +36,7 @@
     width: 100%;
 }
 
-#item-content {
+#itemContent {
     height: 80px;
 }
 

@@ -134,7 +134,7 @@ class App extends Component {
         <TopNav />
         <main>
           <Route exact path="/" component={RecipeSearch} />
-          <PrivateRoute exact path="/pantry" component={Pantry} />
+          <PrivateRoute path="/pantry" component={Pantry} />
           <PrivateRoute path="/fridge" component={Fridge} />
           <PrivateRoute path="/grocery" component={Grocery} />
           <PrivateRoute path="/recipe" component={Recipe} />

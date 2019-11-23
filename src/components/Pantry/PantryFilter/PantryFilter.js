@@ -7,6 +7,11 @@ import './PantryFilter.css';
 class PantryFilter extends Component {
     static contextType = PantryContext;
 
+    componentWillReceiveProps(props) {
+        if (props.refresh !== this.props.refresh) {
+            this.props.refresh()
+        }
+    }
     noFilter() {
         const items = this.context.items
             .map((item, i) => (

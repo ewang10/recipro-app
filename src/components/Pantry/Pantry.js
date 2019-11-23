@@ -52,6 +52,7 @@ class Pantry extends Component {
                     <PantryFilter
                         categories={this.context.categories}
                         items={this.context.items}
+                        refresh={this.updateRefresh}
                     />
                 </section>
             </>

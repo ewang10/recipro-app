@@ -11,6 +11,11 @@
     margin: 0 auto;
 }
 
+.AddPantryCategory > form > .alert {
+    color: red;
+    margin: 5px 0;
+}
+
 .AddPantryCategory > form > label,
 .AddPantryCategory > form > input {
     margin-bottom: 10px;

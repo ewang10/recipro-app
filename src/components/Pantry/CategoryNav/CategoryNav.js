@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import PantryContext from '../../../contexts/PantryContext';
 import './CategoryNav.css';
 
 class CategoryNav extends Component {
+    static contextType = PantryContext;
     render() {
-        const categories = this.props.categories
+        const categories = this.context.categories
             .map((category, i) => {
                 return (
-                    <div className="category" key={i}>
+                    <div 
+                        className="category" 
+                        key={i}
+                        onClick={() => this.context.updateCategory(category)}
+                    >
                         <h4>
-                            <NavLink to={`/pantry/pantry-category/${category.id}`}>
+                            <NavLink to={`/pantry-category/${category.id}`}>
                                 {category.name}
                             </NavLink>
                         </h4>

@@ -1,46 +1,58 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PantryItem from '../PantryItem/PantryItem';
+import PantryContext from '../../../contexts/PantryContext';
 import './PantryFilter.css';
 
 class PantryFilter extends Component {
+    static contextType = PantryContext;
+
     noFilter() {
-        const items = this.props.items
+        const items = this.context.items
             .map((item, i) => (
-                <PantryItem 
+                <PantryItem
                     item={item}
                     key={i}
+                    history={this.props.history}
                 />
             ))
         return items;
     }
-    
+
     itemFilter() {
-        const items = this.props.items
-            .filter(item => item.category_id === this.props.category.id)
+        const items = this.context.items
+            .filter(item => item.categoryid === this.context.category.id)
             .map((item, i) => (
-                <PantryItem 
+                <PantryItem
                     item={item}
                     key={i}
+                    history={this.props.history}
                 />
             ))
+        console.log('items ', items)
         return items;
     }
 
     render() {
+        /*
         let items;
-        if (!this.props.items) {
-            //console.log('no items')
+        
+        if (!this.context.items) {
+
             items = [];
-        } else if (this.props.category) {
-            //console.log(this.props.category)
-            //console.log('yes category')
+        } else if (this.context.category) {
+
             items = this.itemFilter();
         } else {
-            //console.log('no category')
+
             items = this.noFilter();
         }
-        
+        */
+
+        const items = this.context.category
+            ? this.itemFilter()
+            : this.noFilter();
+        console.log('category isss ', this.context.category)
         return (
             <div className="PantryFilter">
                 {items}

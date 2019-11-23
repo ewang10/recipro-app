@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ItemNav from './ItemNav';
+import ValidationError from './ValidationError';
 
-describe('ItemNav Component', () => {
+describe('ValidationError Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<ItemNav />, div);
+    ReactDOM.render(<ValidationError />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });

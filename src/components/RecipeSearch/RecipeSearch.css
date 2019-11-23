@@ -22,3 +22,7 @@
 .recipe_search > button {
     padding: 5px 7px;
 }
+
+.hidden {
+    display: none;
+}

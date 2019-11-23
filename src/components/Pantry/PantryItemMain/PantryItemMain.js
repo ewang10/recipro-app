@@ -1,32 +1,56 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PantryItemApiService from '../../../services/pantry_item-api-service';
+import PantryContext from '../../../contexts/PantryContext';
 import './PantryItemMain.css';
 
 class PantryItemMain extends Component {
+    static contextType = PantryContext;
+
+    deleteItem(itemId, cb) {
+        this.context.clearError();
+
+        PantryItemApiService.deleteItem(itemId)
+            .then(() => {
+                cb(itemId);
+                this.props.history.push('/');
+            })
+            .catch(error => this.context.setError(error));
+    }
+
     displayItem() {
-        //console.log("history main ", this.props.history)
-        //console.log("props main ", this.props)
         return (
             <>
-                <h4>{this.props.item.name}</h4>
+                <h4>{this.context.item.name}</h4>
                 <div className="expiration-date">
-                    Expiration date: {this.props.item.expiration_date}
+                    Expiration date: {this.context.item.expiration}
                 </div>
                 <section className="note">
                     <div className="note-content">
-                        {this.props.item.note}
+                        {this.context.item.note}
                     </div>
                     <div className="note-controller">
-                        <button type="button">Update</button>
-                        <button type="button">Delete</button>
+                        <Link to={`/edit-pantry-item/${this.context.item.id}`}>
+                            <button type="button">Update</button>
+                        </Link>
+                        <button
+                            type="button"
+                            onClick={() =>
+                                this.deleteItem(
+                                    this.context.item.id,
+                                    this.context.deleteItem(this.context.item)
+                                )
+                            }
+                        >
+                            Delete
+                        </button>
                     </div>
                 </section>
             </>
         );
     }
     render() {
-        //console.log('props ', this.props.item)
-        const item = this.props.item ? this.displayItem() : '';
-        //console.log("item ", item)
+        const item = this.context.item ? this.displayItem() : '';
         return (
             <div className="PantryItemMain wrapper">
                 {item}

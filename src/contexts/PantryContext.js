@@ -7,14 +7,16 @@ const PantryContext = React.createContext({
     addCategory: () => { },
     updateItem: () => { },
     deleteItem: () => { },
+    patchItem: () => { },
     addItem: () => { },
     category: '',
     item: '',
-    setCategories: () => {},
-    setItems: () => {},
+    setCategories: () => { },
+    setItems: () => { },
     error: null,
-    setError: () => {},
-    clearError: () => {}
+    setError: () => { },
+    clearError: () => { },
+    reset: () => { }
 });
 
 export default PantryContext;
@@ -71,7 +73,23 @@ export class PantryProvider extends Component {
         const newItems = this.state.items.filter(item =>
             item.id !== itemId
         );
+        this.setState({ items: newItems });
+    }
+
+    patchItem = (itemId, updatedItem) => {
+        const newItems = this.state.items.map(item =>
+            (itemId === item.id)
+                ? updatedItem
+                : item
+        );
         this.setState({items: newItems});
+    }
+
+    resetState = () => {
+        this.setState({
+            selectedFolder: '',
+            selectedNote: ''
+        });
     }
 
     render() {
@@ -84,12 +102,14 @@ export class PantryProvider extends Component {
             updateItem: this.updateSelectedItem,
             addItem: this.addItem,
             deleteItem: this.deleteItem,
+            patchItem: this.patchItem,
             item: this.state.selectedItem,
             setCategories: this.setCategories,
             setItems: this.setItems,
             error: this.state.error,
             setError: this.setError,
-            clearError: this.clearError
+            clearError: this.clearError,
+            reset: this.resetState
         }
 
         return (

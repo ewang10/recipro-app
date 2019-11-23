@@ -16,7 +16,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import PantryItemMain from '../Pantry/PantryItemMain/PantryItemMain';
 import AddPantryCategory from '../Pantry/AddPantryCategory/AddPantryCategory';
 import AddPantryItem from '../Pantry/AddPantryItem/AddPantryItem';
-
+import EditPantryItem from '../Pantry/EditIPantryItem/EditIPantryItem';
 //import FridgeCategoryNav from '../Fridge/FridgeCategoryNav/FridgeCategoryNav';
 //import FridgeFilter from '../Fridge/FridgeFilter/FridgeFilter';
 import FridgeItemMain from '../Fridge/FridgeItemMain/FridgeItemMain';
@@ -132,7 +132,7 @@ class App extends Component {
         <TopNav />
         <main>
           <Route exact path="/" component={RecipeSearch} />
-          <PrivateRoute path="/pantry" component={Pantry} />
+          <PrivateRoute exact path="/pantry" component={Pantry} />
           <PrivateRoute path="/fridge" component={Fridge} />
           <PrivateRoute path="/grocery" component={Grocery} />
           <PrivateRoute path="/recipe" component={Recipe} />
@@ -147,22 +147,33 @@ class App extends Component {
           <PublicOnlyRoute path="/register" component={RegistrationForm} />
           <PublicOnlyRoute path="/login" component={LoginForm} />
 
-
+          <PrivateRoute
+            path="/pantry-category"
+            component={Pantry}
+          />
 
           <PrivateRoute
-            exact path="/pantry-item/:item_id"
+            path="/pantry-item/:item_id"
             component={PantryItemMain}
 
           />
           <PrivateRoute
-            exact path="/add-pantry-item"
+            path="/add-pantry-item"
             component={AddPantryItem}
           />
           <PrivateRoute
-            exact path="/add-pantry-category"
+            path="/add-pantry-category"
             component={AddPantryCategory}
           />
+          <PrivateRoute
+            path='/edit-pantry-item/:item_id'
+            component={EditPantryItem}
+          />
 
+          <PrivateRoute
+            path="/fridge/fridge-category"
+            component={Fridge}
+          />
 
           <PrivateRoute
             path="/fridge-item/:item_id"

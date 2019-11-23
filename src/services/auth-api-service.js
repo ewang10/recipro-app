@@ -54,9 +54,9 @@ const AuthApiService = {
             )
             .then(res => {
                 TokenService.saveAuthToken(res.authToken);
-                TokenService.queueCallbackBeforeExpiry(() => {
-                    AuthApiService.postRefreshToken()
-                });
+            //    TokenService.queueCallbackBeforeExpiry(() => {
+             //       AuthApiService.postRefreshToken()
+             //   });
                 return res;
             })
             .catch(error => console.error(error));

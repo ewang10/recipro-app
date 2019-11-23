@@ -15,7 +15,8 @@ class PantryItem extends Component {
         PantryItemApiService.deleteItem(itemId)
             .then(() => {
                 cb(itemId);
-                this.props.history.push('/');
+                this.props.history.push('/pantry');
+                //window.location.reload(false);
             })
             .catch(error => this.context.setError(error));
     }

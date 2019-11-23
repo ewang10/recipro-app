@@ -10,6 +10,14 @@ import './Pantry.css';
 class Pantry extends Component {
     static contextType = PantryContext;
 
+    state = {
+        refresh: false
+    }
+
+    updateRefresh = () => {
+        this.setState({refresh: !this.state.refresh})
+    }
+
     componentDidMount() {
         this.context.clearError();
         PantryCategoryApiService.getCategories()
@@ -31,7 +39,7 @@ class Pantry extends Component {
             <>
                 <section>
                     <CategoryNav
-                        categories={this.context.categories}
+
                     />
                 </section>
             </>
@@ -53,7 +61,7 @@ class Pantry extends Component {
         return (
             <div className="pantry">
                 <header>
-                    <h2 onClick={console.log('items ', this.context.items)}>
+                    <h2 onClick={this.updateRefresh}>
                         <Link to="/pantry">Pantry</Link>
                     </h2>
                 </header>

@@ -150,7 +150,7 @@ class App extends Component {
           <PublicOnlyRoute path="/login" component={LoginForm} />
 
           <PrivateRoute
-            path="/pantry-category"
+            path="/pantry-category/:id"
             component={Pantry}
           />
 

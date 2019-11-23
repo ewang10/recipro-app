@@ -2,86 +2,36 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FridgeCategoryNav from '../Fridge/FridgeCategoryNav/FridgeCategoryNav';
 import FridgeFilter from './FridgeFilter/FridgeFilter';
-
+import FridgeContext from '../../contexts/FridgeContext';
+import FridgeCategoryApiService from '../../services/fridge_category-api-service';
+import FridgeItemApiService from '../../services/fridge_item-api-service';
 import './Fridge.css';
 
 class Fridge extends Component {
-    categories = [
-        {
-            id: 1,
-            name: "Dairy"
-        },
-        {
-            id: 2,
-            name: "Baking"
-        },
-        {
-            id: 3,
-            name: "Canned Foods"
-        }
-    ];
+    static contextType = FridgeContext;
 
-    items = [
-        {
-            id: 1,
-            name: "cheese",
-            category_id: 1,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        },
-        {
-            id: 2,
-            name: "milk",
-            category_id: 1,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        },
-        {
-            id: 3,
-            name: "flour",
-            category_id: 2,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        },
-        {
-            id: 4,
-            name: "canned tuna",
-            category_id: 3,
-            modified: new Date(),
-            expiration_date: "2017-11-1",
-            note: "some note..."
-        }
-    ];
+    componentDidMount() {
+        this.context.clearError();
+        FridgeCategoryApiService.getCategories()
+            .then(categories => this.context.setCategories(categories))
+            .catch(error => this.context.setError(error));
+
+        FridgeItemApiService.getItems()
+                .then(items => this.context.setItems(items))
+                .catch(error => this.context.setError(error));
+    }
 
     handleSideNav() {
         return (
             <>
-                <section>
-                    <FridgeCategoryNav
-                        categories={this.categories}
-                    />
-                </section>
-
+                    <FridgeCategoryNav />
             </>
         )
     }
     handleMain() {
         return (
             <>
-                <section>
-                    <FridgeFilter
-                        categories={this.categories}
-                        items={this.items}
-                    />
-                </section>
-
-
-
-                
-
+                    <FridgeFilter />
             </>
         )
     }

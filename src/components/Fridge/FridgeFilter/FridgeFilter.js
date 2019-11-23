@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FridgeItem from '../FridgeItem/FridgeItem';
+import FridgeItemApiService from '../../../services/fridge_item-api-service';
+import FridgeContext from '../../../contexts/FridgeContext';
 import './FridgeFilter.css';
 
 class FridgeFilter extends Component {
+    static contextType = FridgeContext;
     noFilter() {
         const items = this.props.items
             .map((item, i) => (
@@ -16,8 +19,8 @@ class FridgeFilter extends Component {
     }
     
     itemFilter() {
-        const items = this.props.items
-            .filter(item => item.category_id === this.props.category.id)
+        const items = this.context.items
+            .filter(item => item.categoryid === this.context.category.id)
             .map((item, i) => (
                 <FridgeItem 
                     item={item}
@@ -28,6 +31,7 @@ class FridgeFilter extends Component {
     }
 
     render() {
+        /*
         let items;
         if (!this.props.items) {
             //console.log('no items')
@@ -40,7 +44,10 @@ class FridgeFilter extends Component {
             //console.log('no category')
             items = this.noFilter();
         }
-        
+        */
+        const items = this.context.category
+            ? this.itemFilter()
+            : this.noFilter();
         return (
             <div className="FridgeFilter">
                 {items}

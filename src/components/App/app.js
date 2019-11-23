@@ -29,6 +29,8 @@ import AuthApiService from '../../services/auth-api-service';
 import TokenService from '../../services/token-service';
 import './app.css';
 
+//import { FridgeProvider } from '../../contexts/FridgeContext';
+
 class App extends Component {
   recipes = [
     {

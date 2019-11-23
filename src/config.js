@@ -1,4 +1,4 @@
 export default {
-    APIT_ENDPOINT: 'https://still-fjord-13060.herokuapp.com/api',
+    APIT_ENDPOINT: 'http://localhost:8000/api',
     TOKEN_KEY: 'recipro-auth-token'
 }

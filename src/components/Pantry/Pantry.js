@@ -14,9 +14,9 @@ class Pantry extends Component {
         this.context.clearError();
         PantryCategoryApiService.getCategories()
             .then(categories => {
-                console.log('data retrieved ', categories);
+                //console.log('data retrieved ', categories);
                 this.context.setCategories(categories)
-                console.log('data settted ', this.context.categories)
+                //console.log('data settted ', this.context.categories)
             })
             .catch(error => this.context.setError(error));
         
@@ -53,7 +53,7 @@ class Pantry extends Component {
         return (
             <div className="pantry">
                 <header>
-                    <h2>
+                    <h2 onClick={console.log('items ', this.context.items)}>
                         <Link to="/pantry">Pantry</Link>
                     </h2>
                 </header>

@@ -56,7 +56,7 @@ class RecipeSearch extends Component {
             q: search.value.split(",")
         }
         const queryString = this.formatQueryString(params);
-        let searchUrl = 'https://api.edamam.com/search' + '?' + queryString;
+        let searchUrl = 'https://api.edamam.com/search?' + queryString;
 
         fetch(searchUrl)
             .then(res =>

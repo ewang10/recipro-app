@@ -29,7 +29,7 @@ class PantryFilter extends Component {
                     history={this.props.history}
                 />
             ))
-        console.log('items ', items)
+        //console.log('items ', items)
         return items;
     }
 
@@ -52,7 +52,7 @@ class PantryFilter extends Component {
         const items = this.context.category
             ? this.itemFilter()
             : this.noFilter();
-        console.log('category isss ', this.context.category)
+        //console.log('category isss ', this.context.category)
         return (
             <div className="PantryFilter">
                 {items}

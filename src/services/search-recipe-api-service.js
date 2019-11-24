@@ -11,7 +11,7 @@ const SearchRecipeApiService = {
         const params = {
             app_id: config.EDAMAM_ID,
             app_key: config.EDAMAM_KEY,
-            q: searchTerm.value.split(",")
+            q: searchTerm.split(",")
         }
 
         const queryString = SearchRecipeApiService.formatQueryString(params);

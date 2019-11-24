@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import SearchItem from './SearchItem/SearchItem';
-import TokenService from '../../services/token-service';
 import RecipeContext from '../../contexts/RecipeContext';
-import RecipeApiService from '../../services/recipe-api-service';
 import SearchRecipeApiService from '../../services/search-recipe-api-service';
 import './RecipeSearch.css';
 
@@ -13,7 +10,8 @@ class RecipeSearch extends Component {
         super(props);
         this.state = {
             STORE: [],
-            searchResults: []
+            searchResults: [],
+            showList: false
         }
     }
 
@@ -137,13 +135,18 @@ class RecipeSearch extends Component {
 
     handleSearch(event) {
         event.preventDefault();
+
         //set error to null
         const { search } = event.target;
 
         SearchRecipeApiService.getRecipes(search.value)
             .then(data => {
                 //console.log(data);
-                this.setState({ searchResults: data.hits });
+                this.setState({ 
+                    searchResults: data.hits ,
+                    showList: true
+                });
+
                 //image data.hits[i].recipe.image
                 //name data.hits[i].recipe.label
                 //url data.hits[i].recipe.url
@@ -152,11 +155,15 @@ class RecipeSearch extends Component {
     }
 
     //$(getRecipeToSave);
+    getInitialListState = () => {
+        this.setState({showList: false});
+    }
 
     render() {
+        this.getInitialListState();
+        const className = this.state.showList ? "" : "hidden";
         return (
             <section className="wrapper">
-                <div className="">
                     <form
                         className="recipe_search"
                         onSubmit={e => this.handleSearch(e)}
@@ -166,12 +173,11 @@ class RecipeSearch extends Component {
                             placeholder="e.g. chicken, thyme, milk..." required />
                         <button type="submit">Search</button>
                     </form>
-                    <section id="results" className="hidden">
+                    <section id="results" className={className}>
                         <ul id="results-list">
-                            {this.resultList}
+                            {this.state.searchResults.length && this.resultList()}
                         </ul>
                     </section>
-                </div>
             </section>
         );
     }

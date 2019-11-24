@@ -53,6 +53,7 @@ class AddFridgeItem extends Component {
 
                 //console.log('category added ', data.categoryid)
                 this.context.addItem(data);
+                this.context.reset();
                 this.props.history.push('/fridge');
             })
             .catch(error => this.context.setError(error));

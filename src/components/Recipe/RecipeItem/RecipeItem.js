@@ -8,7 +8,7 @@ class RecipeItem extends Component {
     static contextType = RecipeContext;
     deleteRecipe(recipeId, cb) {
         this.context.clearError();
-        RecipeApiService.deleteItem(recipeId)
+        RecipeApiService.deleteRecipe(recipeId)
             .then(() => {
                 cb(recipeId);
             })

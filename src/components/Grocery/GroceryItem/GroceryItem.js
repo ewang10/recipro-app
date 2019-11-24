@@ -11,7 +11,7 @@ class GroceryItem extends Component {
         GroceryApiService.deleteGrocery(itemId)
             .then(() => {
                 cb(itemId);
-                this.props.history.push('/grocery');
+                //this.props.history.push('/grocery');
             })
             .catch(error => this.context.setError(error));
     }

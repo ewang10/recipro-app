@@ -14,7 +14,7 @@ class Grocery extends Component {
             .then(groceries => {
 
                 this.context.setGroceries(groceries)
-                console.log('groceries owned ', this.context.groceries)
+                //console.log('groceries owned ', this.context.groceries)
             })
             .catch(error => this.context.setError(error));
     }

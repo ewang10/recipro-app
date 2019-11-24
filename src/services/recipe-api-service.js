@@ -28,7 +28,7 @@ const RecipeApiService = {
                     : res.json()
             )
     },
-    postItem(newRecipe) {
+    postRecipe(newRecipe) {
         return fetch(`${config.APIT_ENDPOINT}/recipes`, {
             method: 'POST',
             headers: {
@@ -43,7 +43,7 @@ const RecipeApiService = {
                     : res.json()
             )
     },
-    deleteItem(recipeId) {
+    deleteRecipe(recipeId) {
         return fetch(`${config.APIT_ENDPOINT}/recipes/${recipeId}`, {
             method: 'DELETE',
             headers: {

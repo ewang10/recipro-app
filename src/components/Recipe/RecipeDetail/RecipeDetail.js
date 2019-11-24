@@ -1,33 +1,46 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import RecipeContext from '../../../contexts/RecipeContext';
 import './RecipeDetail.css';
 
 class RecipeDetail extends Component {
+    static contextType = RecipeContext;
     render() {
+        const { selectedRecipe } = this.context;
+        //console.log('selected recipe iss ', selectedRecipe)
+        const image =
+            (selectedRecipe.image)
+                ? <img src={selectedRecipe.image} alt={selectedRecipe.name} />
+                : <img src="../../Utils/Images/No-image.png" alt="not available" />
         //console.log('match ', this.props.match.params.recipe_id)
-        const recipe = this.props.recipes.find(recipe =>
-            recipe.id === parseInt(this.props.match.params.recipe_id));
-        const ingredients = recipe.ingredients.map((ingredient, i) =>
-            <li key={i}>
-                {ingredient}
-            </li>
-        );
+        //const recipe = this.props.recipes.find(recipe =>
+        //    recipe.id === parseInt(this.props.match.params.recipe_id));
+        let ingredients;
+        if (selectedRecipe.ingredients) {
+            const recipeIngredients = selectedRecipe.ingredients.map((ingredient, i) =>
+                <li key={i}>
+                    {ingredient}
+                </li>
+            );
+            ingredients = <ul>{recipeIngredients}</ul>
+
+        } else {
+            ingredients = 'No ingredients available';
+        }
         //console.log(recipe);
         return (
             <div className="RecipeDetail">
-                <h4><a href={recipe.url}>{recipe.name}</a></h4>
+                <h4><a href={selectedRecipe.url} target="_blank">{selectedRecipe.name}</a></h4>
                 <div className="img-container">
-                    <img src={recipe.image} alt={recipe.name}/>
+                    {image}
                 </div>
                 <div className="ingredients">
                     <h6>Ingredients</h6>
-                    <ul>
-                        {ingredients}
-                    </ul>
+                    {ingredients}
                 </div>
             </div>
         );
     }
 }
 
-export default withRouter(RecipeDetail);
+
+export default RecipeDetail;

@@ -142,21 +142,15 @@ class App extends Component {
 
 
 
-
-          <PublicOnlyRoute path="/register" component={RegistrationForm} />
-          <PublicOnlyRoute path="/login" component={LoginForm} />
-
           <RecipeProvider>
             <PrivateRoute path="/recipe" component={Recipe} />
             <PrivateRoute
               path="/recipe-item/:recipe_id"
-              render={() =>
-                <RecipeDetail
-                  recipes={this.recipes}
-                />
-              }
+              component={RecipeDetail}
             />
           </RecipeProvider>
+          <PublicOnlyRoute path="/register" component={RegistrationForm} />
+          <PublicOnlyRoute path="/login" component={LoginForm} />
 
           <GroceryProvider>
             <PrivateRoute path="/grocery" component={Grocery} />

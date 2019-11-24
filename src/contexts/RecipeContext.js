@@ -67,9 +67,9 @@ export class RecipeProvider extends Component {
         }
 
         return (
-            <RecipeProvider value={contextValue}>
+            <RecipeContext.Provider value={contextValue}>
                 {this.props.children}
-            </RecipeProvider>
+            </RecipeContext.Provider>
         );
     }
 }

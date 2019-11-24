@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import SearchItem from './SearchItem/SearchItem';
-import RecipeContext from '../../contexts/RecipeContext';
+
 import SearchRecipeApiService from '../../services/search-recipe-api-service';
 import './RecipeSearch.css';
 
 class RecipeSearch extends Component {
-    static contextType = RecipeContext;
     constructor(props) {
         super(props);
         this.state = {
-            STORE: [],
             searchResults: [],
             showList: false,
             noResults: false
         }
-    }
-
-    addRecipeToStore(recipe) {
-        this.setState({ STORE: [...this.state.STORE, recipe] })
     }
 
     resultList = () => {
@@ -26,7 +20,6 @@ class RecipeSearch extends Component {
             <SearchItem
                 key={i}
                 item={item}
-                updateStore={recipe => this.addRecipeToStore(recipe)}
             />
         );
         return list;

@@ -30,7 +30,7 @@ class Grocery extends Component {
                 {items}
                 <Link to="/add-grocery">
                     <button type="button">
-                        Add Grocery
+                        + Grocery
                     </button>
                 </Link>
             </div>

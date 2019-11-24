@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import TokenService from '../../../services/token-service';
 import RecipeContext from '../../../contexts/RecipeContext';
 import RecipeApiService from '../../../services/recipe-api-service';
@@ -38,7 +39,11 @@ export default class SearchItem extends Component {
             : '';
         return (
             <div className='SearchItem'>
-                <h4>{item.recipe.label}</h4>
+                <Link to='/search-selected-recipe'>
+                    <h4 onClick={() => this.context.updateSelectedSearchRecipe(item.recipe)}>
+                        {item.recipe.label}
+                    </h4>
+                </Link>
                 {button}
             </div>
         );

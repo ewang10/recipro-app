@@ -9,7 +9,9 @@ const RecipeContext = React.createContext({
     error: null,
     setRecipes: () => { },
     selectedRecipe: '',
-    updateRecipe: () => { }
+    updateRecipe: () => { },
+    selectedSearchRecipe: '',
+    updateSelectedSearchRecipe: () => {}
 })
 
 export default RecipeContext;
@@ -19,8 +21,13 @@ export class RecipeProvider extends Component {
         super(props);
         this.state = {
             recipes: [],
-            selectedRecipe: ''
+            selectedRecipe: '',
+            selectedSearchRecipe: ''
         };
+    }
+
+    updateSelectedSearchRecipe = recipe => {
+        this.setState({selectedSearchRecipe: recipe});
     }
 
     setError = error => {
@@ -63,7 +70,9 @@ export class RecipeProvider extends Component {
             error: this.state.error,
             setRecipes: this.setRecipes,
             updateRecipe: this.updateSelectedRecipe,
-            selectedRecipe: this.state.selectedRecipe
+            selectedRecipe: this.state.selectedRecipe,
+            updateSelectedSearchRecipe: this.updateSelectedSearchRecipe,
+            selectedSearchRecipe: this.state.selectedSearchRecipe
         }
 
         return (

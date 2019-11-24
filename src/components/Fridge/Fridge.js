@@ -39,7 +39,7 @@ class Fridge extends Component {
         return (
             <div className="fridge">
                 <header>
-                    <h2>
+                    <h2 onClick={() => this.context.reset()}>
                         <Link to="/fridge">Fridge</Link>
                     </h2>
                 </header>

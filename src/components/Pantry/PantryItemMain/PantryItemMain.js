@@ -38,7 +38,7 @@ class PantryItemMain extends Component {
                             onClick={() =>
                                 this.deleteItem(
                                     this.context.item.id,
-                                    this.context.deleteItem(this.context.item)
+                                    this.context.deleteItem
                                 )
                             }
                         >

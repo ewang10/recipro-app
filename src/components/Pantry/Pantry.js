@@ -66,7 +66,7 @@ class Pantry extends Component {
         return (
             <div className="pantry">
                 <header>
-                    <h2 /*onClick={() => this.updateRefresh()}*/>
+                    <h2 onClick={() => this.context.reset()}>
                         <Link to="/pantry">Pantry</Link>
                     </h2>
                 </header>

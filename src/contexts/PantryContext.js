@@ -87,8 +87,8 @@ export class PantryProvider extends Component {
 
     resetState = () => {
         this.setState({
-            selectedFolder: '',
-            selectedNote: ''
+            selectedCategory: '',
+            updateSelectedItem: ''
         });
     }
 

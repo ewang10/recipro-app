@@ -15,7 +15,7 @@ class FridgeItem extends Component {
         FridgeItemApiService.deleteItem(itemId)
             .then(() => {
                 cb(itemId);
-                this.props.history.push('/fridge');
+                //this.props.history.push('/fridge');
             })
             .catch(error => this.context.setError(error));
     }

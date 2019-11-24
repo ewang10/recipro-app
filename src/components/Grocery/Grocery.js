@@ -11,13 +11,18 @@ class Grocery extends Component {
     componentDidMount() {
         this.context.clearError();
         GroceryApiService.getGroceries()
-            .then(groceries => this.context.setGroceries(groceries))
+            .then(groceries => {
+
+                this.context.setGroceries(groceries)
+                console.log('groceries owned ', this.context.groceries)
+            })
             .catch(error => this.context.setError(error));
     }
 
     render() {
+        //console.log('groceries owned ', this.context.groceries)
         const items = this.context.groceries.map((item, i) =>
-            <GroceryItem item={item} key={i} />
+            {return <GroceryItem item={item} key={i} />}
         )
         return (
             <div className="Grocery">

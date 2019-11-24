@@ -1,0 +1,56 @@
+.AddGrocery > h3 {
+    text-align: center;
+    color: #146642;
+}
+
+.AddGrocery > form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.AddGrocery > form > .alert {
+    color: red;
+    margin: 5px 0;
+}
+
+.AddGrocery > form > label,
+.AddGrocery > form > input {
+    margin-bottom: 10px;
+}
+
+.AddGrocery > form > label {
+    font-weight: 500;
+}
+
+.AddGrocery > form > input {
+    padding: 5px 7px;
+}
+
+.AddGrocery > form > button {
+    padding: 5px 7px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+    background-color: #B31A00;
+}
+
+.AddGrocery > form > button:hover {
+    color: #146642;
+}
+
+@media screen and (min-width: 568px) {
+    .AddGrocery > form {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .AddGrocery > form {
+        width: 30%;
+    }
+}

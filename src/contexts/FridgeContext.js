@@ -87,8 +87,8 @@ export class FridgeProvider extends Component {
 
     resetState = () => {
         this.setState({
-            selectedFolder: '',
-            selectedNote: ''
+            selectedCategory: '',
+            selectedItem: ''
         });
     }
 

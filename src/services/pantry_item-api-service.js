@@ -50,11 +50,11 @@ const PantryItemApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+            })
     },
     patchItem(itemId, item) {
         return fetch(`${config.APIT_ENDPOINT}/pantry-items/${itemId}`, {
@@ -65,11 +65,11 @@ const PantryItemApiService = {
             },
             body: JSON.stringify(item)
         })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+            })
     }
 }
 

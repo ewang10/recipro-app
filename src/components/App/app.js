@@ -34,6 +34,7 @@ import './app.css';
 import { FridgeProvider } from '../../contexts/FridgeContext';
 import { PantryProvider } from '../../contexts/PantryContext';
 import { GroceryProvider } from '../../contexts/GroceryContext';
+import { RecipeProvider } from '../../contexts/RecipeContext';
 
 class App extends Component {
   recipes = [
@@ -141,17 +142,21 @@ class App extends Component {
 
 
 
-          <PrivateRoute path="/recipe" component={Recipe} />
-          <PrivateRoute
-            path="/recipe-item/:recipe_id"
-            render={() =>
-              <RecipeDetail
-                recipes={this.recipes}
-              />
-            }
-          />
+
           <PublicOnlyRoute path="/register" component={RegistrationForm} />
           <PublicOnlyRoute path="/login" component={LoginForm} />
+
+          <RecipeProvider>
+            <PrivateRoute path="/recipe" component={Recipe} />
+            <PrivateRoute
+              path="/recipe-item/:recipe_id"
+              render={() =>
+                <RecipeDetail
+                  recipes={this.recipes}
+                />
+              }
+            />
+          </RecipeProvider>
 
           <GroceryProvider>
             <PrivateRoute path="/grocery" component={Grocery} />

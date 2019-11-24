@@ -47,7 +47,7 @@ export class GroceryProvider extends Component {
     }
 
     render() {
-        const contextValues = {
+        const contextValue = {
             groceries: this.state.groceries,
             setError: this.setError,
             clearError: this.clearError,
@@ -58,7 +58,7 @@ export class GroceryProvider extends Component {
         }
 
         return (
-            <GroceryContext.Provider value={contextValues}>
+            <GroceryContext.Provider value={contextValue}>
                 {this.props.children}
             </GroceryContext.Provider>
         );

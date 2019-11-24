@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import config from '../../config';
 import TokenService from '../../services/token-service';
 import './RecipeSearch.css';
 
@@ -51,8 +52,8 @@ class RecipeSearch extends Component {
         //set error to null
         const { search } = event.target;
         const params = {
-            app_id: 'b6e53abc',
-            app_key: '17a3d9cf41f07f362212354c21fe6dfd',
+            app_id: config.EDAMAM_ID,
+            app_key: config.EDAMAM_KEY,
             q: search.value.split(",")
         }
         const queryString = this.formatQueryString(params);

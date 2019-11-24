@@ -22,11 +22,11 @@ const GroceryApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e))
+                }
+            })
     },
     postGrocery(grocery) {
         return fetch(`${config.APIT_ENDPOINT}/groceries`, {

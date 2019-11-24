@@ -1,5 +1,35 @@
+.Grocery {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .Grocery > h2 {
     text-align: center;
     padding: 15px;
     color: #146642;
+}
+
+.Grocery button {
+    padding: 5px 10px;
+    background-color: #B31A00;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+}
+
+.Grocery button:hover {
+    color: #146642;
+}
+
+@media screen and (min-width: 568px) {
+    .Grocery {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .Grocery {
+        width: 45%;
+    }
 }

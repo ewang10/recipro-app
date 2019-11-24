@@ -48,7 +48,7 @@ class AddGrocery extends Component {
                 console.log('grocery added ', data)
                 groceryName.value = '';
                 this.context.addGrocery(data);
-                //this.props.history.push('/grocery');
+                this.props.history.push('/grocery');
             })
             .catch(error => this.context.setError(error));
     }

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    
     margin: 5px auto;
     padding: 10px 15px;
     background-color: #146642;
@@ -22,14 +22,3 @@
     color: #146642;
 }
 
-@media screen and (min-width: 568px) {
-    .GroceryItem {
-        width: 60%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .GroceryItem {
-        width: 45%;
-    }
-}

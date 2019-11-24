@@ -21,7 +21,7 @@ class GroceryItem extends Component {
                 <h4>{this.props.item.name}</h4>
                 <button
                     type="button"
-                    onClick={this.deleteGrocery(
+                    onClick={() => this.deleteGrocery(
                         this.props.item.id,
                         this.context.deleteGrocery
                     )}

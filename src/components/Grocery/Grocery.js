@@ -22,7 +22,7 @@ class Grocery extends Component {
     render() {
         //console.log('groceries owned ', this.context.groceries)
         const items = this.context.groceries.map((item, i) =>
-            {return <GroceryItem item={item} key={i} />}
+            <GroceryItem item={item} key={i} />
         )
         return (
             <div className="Grocery">

@@ -29,7 +29,11 @@ class RecipeDetail extends Component {
         //console.log(recipe);
         return (
             <div className="RecipeDetail">
-                <h4><a href={selectedRecipe.url} target="_blank">{selectedRecipe.name}</a></h4>
+                <h4>
+                    <a href={selectedRecipe.url} target="_blank" rel="noopener noreferrer">
+                        {selectedRecipe.name}
+                    </a>
+                </h4>
                 <div className="img-container">
                     {image}
                 </div>

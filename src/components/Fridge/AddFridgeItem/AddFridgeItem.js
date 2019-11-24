@@ -51,7 +51,7 @@ class AddFridgeItem extends Component {
                 itemContent.value = '';
                 itemCategory.value = '';
 
-                console.log('category added ', data.categoryid)
+                //console.log('category added ', data.categoryid)
                 this.context.addItem(data);
                 this.props.history.push('/fridge');
             })

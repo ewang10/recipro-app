@@ -33,4 +33,8 @@ class GroceryItem extends Component {
     }
 }
 
+GroceryItem.defaultProps = {
+    item: {}
+}
+
 export default GroceryItem;

@@ -44,3 +44,7 @@ export default class SearchItem extends Component {
         );
     }
 }
+
+SearchItem.defaultProps = {
+    item: {}
+}

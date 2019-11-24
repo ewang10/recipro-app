@@ -45,7 +45,7 @@ class AddGrocery extends Component {
 
         GroceryApiService.postGrocery(grocery)
             .then(data => {
-                console.log('grocery added ', data)
+                //console.log('grocery added ', data)
                 groceryName.value = '';
                 this.context.addGrocery(data);
                 this.props.history.push('/grocery');

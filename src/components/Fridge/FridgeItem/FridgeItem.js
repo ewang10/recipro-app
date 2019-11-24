@@ -54,7 +54,9 @@ class FridgeItem extends Component {
 }
 
 FridgeItem.defaultProps = {
-    item: {}
+    item: {
+        modified: new Date()
+    }
 }
 
 export default withRouter(FridgeItem);

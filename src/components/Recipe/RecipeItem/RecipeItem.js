@@ -37,4 +37,8 @@ class RecipeItem extends Component {
     }
 }
 
+RecipeItem.defaultProps = {
+    recipe: {}
+}
+
 export default RecipeItem;

@@ -58,7 +58,9 @@ class PantryItem extends Component {
 }
 
 PantryItem.defaultProps = {
-    item: {}
+    item: {
+        modified: new Date()
+    }
 }
 
 export default PantryItem;

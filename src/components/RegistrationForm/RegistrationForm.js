@@ -49,7 +49,7 @@ class RegistrationForm extends Component {
                     </div>
                     <div className="password">
                         <label htmlFor="pass">Password: </label>
-                        <input name="pass" id="pass" required />
+                        <input type="password" name="pass" id="pass" required />
                     </div>
                     <button type="submit">Register</button>
                 </form>

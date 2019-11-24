@@ -11,6 +11,7 @@ import RecipeDetail from '../Recipe/RecipeDetail/RecipeDetail';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import LoginForm from '../LoginForm/LoginForm';
 
+import AddGrocery from '../Grocery/AddGrocery/AddGrocery';
 //import CategoryNav from '../Pantry/CategoryNav/CategoryNav';
 //import PantryFilter from '../Pantry/PantryFilter/PantryFilter';
 import PantryItemMain from '../Pantry/PantryItemMain/PantryItemMain';
@@ -154,6 +155,7 @@ class App extends Component {
 
           <GroceryProvider>
             <PrivateRoute path="/grocery" component={Grocery} />
+            <PrivateRoute path="/add-grocery" component={AddGrocery} />
           </GroceryProvider>
 
           <PantryProvider>

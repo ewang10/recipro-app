@@ -65,7 +65,8 @@ class EditFridgeItem extends Component {
             name: itemName.value,
             expiration: expirationDate.value,
             note: itemContent.value,
-            categoryid: this.findCategoryId(itemCategory.value)
+            categoryid: this.findCategoryId(itemCategory.value),
+            modified: new Date()
         };
         FridgeItemApiService.patchItem(itemId, updateItem)
             .then(data => {

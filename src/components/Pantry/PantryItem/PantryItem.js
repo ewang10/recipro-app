@@ -37,6 +37,7 @@ class PantryItem extends Component {
                 </h4>
                 <div className="controller">
                     <div className="item-modified-date">
+                        {console.log('modified date isss ', item.modified)}
                         Modified {format(new Date(item.modified), 'do MMM yyyy')}
                     </div>
                     <button

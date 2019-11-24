@@ -66,7 +66,8 @@ class EditPantryItem extends Component {
             name: itemName.value,
             expiration: expirationDate.value,
             note: itemContent.value,
-            categoryid: this.findCategoryId(itemCategory.value)
+            categoryid: this.findCategoryId(itemCategory.value),
+            modified: new Date()
         };
         PantryItemApiService.patchItem(itemId, updateItem)
             .then(data => {
@@ -131,7 +132,7 @@ class EditPantryItem extends Component {
     render() {
         const { error } = this.context;
         const { itemName, category, expiration, note } = this.state;
-        console.log('updated category ', category)
+        //console.log('updated category ', category)
         const options = this.context.categories
             .map((category, i) =>
                 <option key={i} value={category.name}>{category.name}</option>

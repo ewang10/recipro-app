@@ -11,7 +11,7 @@ import Recipe from '../Recipe/Recipe';
 import RecipeDetail from '../Recipe/RecipeDetail/RecipeDetail';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import LoginForm from '../LoginForm/LoginForm';
-
+import Main from '../Main/Main';
 import AddGrocery from '../Grocery/AddGrocery/AddGrocery';
 //import CategoryNav from '../Pantry/CategoryNav/CategoryNav';
 //import PantryFilter from '../Pantry/PantryFilter/PantryFilter';
@@ -87,11 +87,11 @@ class App extends Component {
         <TopNav />
         <main>
 
-
+          <Route exact path="/" component={Main} />
 
           <RecipeProvider>
-            <Route exact path="/" component={RecipeSearch} />
-            <Route path='/search-selected-recipe' component={SelectedRecipe} />
+            <PrivateRoute path="/seach-recipe" component={RecipeSearch} />
+            <PrivateRoute path='/search-selected-recipe' component={SelectedRecipe} />
             <PrivateRoute path="/recipe" component={Recipe} />
             <PrivateRoute
               path="/recipe-item/:recipe_id"

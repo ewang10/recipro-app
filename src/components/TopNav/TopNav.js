@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import IdleService from '../../services/idle-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 import './TopNav.css';
 
 class TopNav extends Component {
@@ -17,6 +19,7 @@ class TopNav extends Component {
     logoutLink() {
         return (
             <div className="sign_out">
+                <Link to="/seach-recipe">Search</Link>
                 <Link
                     to="/"
                     className="logout"
@@ -25,6 +28,7 @@ class TopNav extends Component {
             </div>
         );
     }
+
     loginLink() {
         return (
             <div className="sign_up_in">
@@ -36,7 +40,12 @@ class TopNav extends Component {
     render() {
         return (
             <nav className="nav-top">
-                <h1><Link to="/">ReciPro</Link></h1>
+                <h1>
+                    <Link to="/">
+                        <FontAwesomeIcon icon={faUtensils} />
+                        ReciPro
+                    </Link>
+                </h1>
                 {
                     TokenService.hasAuthToken()
                         ? this.logoutLink()

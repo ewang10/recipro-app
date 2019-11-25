@@ -1,5 +1,3 @@
-
-
 .nav-top {
     position: fixed;
     top: 0;
@@ -24,14 +22,11 @@
 }
 
 .nav-top > h1 > a {
-    color: white;
-}
-
-.nav-top > h1 > a:hover {
     color: #B31A00;
 }
 
-.sign_up_in {
+.sign_up_in,
+.sign_out {
     display: flex;
     flex-direction: column;
 }
@@ -48,7 +43,7 @@
 }
 
 @media screen and (min-width: 568px) {
-    .sign_up_in {
+    .sign_up_in, .sign_out {
         display: flex;
         flex-direction: row;
         justify-content: space-between;

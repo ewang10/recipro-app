@@ -1,0 +1,42 @@
+.Main {
+    margin: 0 auto;
+    max-width: 80%;
+    line-height: 150%;
+}
+
+.Main > h2,
+.Main > h3 {
+    text-align: center;
+}
+
+.Main > .explore {
+    display: flex;
+    justify-content: center;
+}
+
+.Main > .explore > button {
+    margin: 30px 0;
+    padding: 10px 20px;
+    font-weight: 700;
+    border: none;
+}
+
+.Main > .about {
+    margin-top: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+@media screen and (min-width: 1024px) {
+    @media screen and (min-height: 768px) {
+        .Main > .about {
+            max-width: 70%;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Main > .about {
+        max-width: 50%;
+    }
+}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import SearchItem from './SearchItem/SearchItem';
-
 import SearchRecipeApiService from '../../services/search-recipe-api-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './RecipeSearch.css';
 
 class RecipeSearch extends Component {
@@ -55,7 +56,7 @@ class RecipeSearch extends Component {
     render() {
         const className = this.state.showList ? "" : "hidden";
         return (
-            <section className="backgroundImg wrapper">
+            <section id="search-background" className="search-wrapper">
                 <form
                     className="recipe_search"
                     onSubmit={e => this.handleSearch(e)}
@@ -63,7 +64,9 @@ class RecipeSearch extends Component {
                     <label htmlFor="search">Find something to cook</label>
                     <input name="search" id="search"
                         placeholder="e.g. chicken, thyme, milk..." required />
-                    <button type="submit">Search</button>
+                    <button type="submit">
+                        <FontAwesomeIcon icon={faSearch} />
+                    </button>
                 </form>
                 {this.state.noResults && (this.state.searchResults.length === 0) &&
                     <p className="no-results">No results available</p>}

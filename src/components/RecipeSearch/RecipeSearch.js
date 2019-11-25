@@ -65,7 +65,7 @@ class RecipeSearch extends Component {
                     <input name="search" id="search"
                         placeholder="e.g. chicken, thyme, milk..." required />
                     <button type="submit">
-                        <FontAwesomeIcon icon={faSearch} />
+                        <FontAwesomeIcon icon={faSearch} className="search-icon"/>
                     </button>
                 </form>
                 {this.state.noResults && (this.state.searchResults.length === 0) &&

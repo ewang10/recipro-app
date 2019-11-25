@@ -17,27 +17,29 @@ class Main extends Component {
     }
     render() {
         return (
-            <div className="Main">
-                <h2>NEVER HAVE UNFINISHED EXPIRED FOOD AGAIN</h2>
-                <div className="explore">
-                    <button
-                        type="button"
-                        onClick={() => this.demoLogin()}
-                    >
-                        Explore ReciPro
+            <section className="main-background">
+                <div className="Main">
+                    <h2>NEVER WASTE FOOD AGAIN</h2>
+                    <div className="explore">
+                        <button
+                            type="button"
+                            onClick={() => this.demoLogin()}
+                        >
+                            Explore ReciPro
                     </button>
-                </div>
-                <h3>HOW IT WORKS</h3>
-                <p className="about">
-                    ReciPro helps you keep track of your fridge
-                    and pantry items as well as their expiration dates.
-                    You can also make yourself a grocery list for next
-                    time when you go shopping. Or better yet, have
-                    something in your fridge/pantry but don't know what
-                    to make? Search for recipes, and save the ones you like.
-                </p>
+                    </div>
+                    <h3>HOW IT WORKS</h3>
+                    <p className="about">
+                        ReciPro helps you keep track of your fridge
+                        and pantry items as well as their expiration dates.
+                        You can also make yourself a grocery list for next
+                        time when you go shopping. Or better yet, have
+                        something in your fridge/pantry but don't know what
+                        to make? Search for recipes, and save the ones you like.
+                    </p>
 
-            </div>
+                </div>
+            </section>
         );
     }
 }

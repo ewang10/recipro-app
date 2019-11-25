@@ -1,7 +1,20 @@
+.main-background {
+    background: url(ReciProHome.jpg) 
+        no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+
+        background-blend-mode: multiply;
+        background-color: #808080;
+        margin: -20px auto;
+}
+
 .Main {
     margin: 0 auto;
     max-width: 80%;
     line-height: 150%;
+    padding-top: 50px;
+    color: white;
 }
 
 .Main > h2,
@@ -16,15 +29,23 @@
 
 .Main > .explore > button {
     margin: 30px 0;
-    padding: 10px 20px;
+    padding: 20px 40px;
     font-weight: 700;
     border: none;
+    border-radius: 5px;
+    background-color: #B31A00;
+    color: white;
+    font-size: 1.2em;
+}
+
+.Main > .explore > button:hover {
+    color: #146642;
 }
 
 .Main > .about {
-    margin-top: 10px;
     display: block;
-    margin: 10px auto;
+    margin: 10px auto 0;
+    padding: 20px 0;
 }
 
 @media screen and (min-width: 1024px) {

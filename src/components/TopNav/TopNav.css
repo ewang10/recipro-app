@@ -22,7 +22,7 @@
 }
 
 .nav-top > h1 > a {
-    color: #B31A00;
+    color: white;
 }
 
 .sign_up_in,
@@ -34,7 +34,7 @@
 .sign_up_in > a,
 .sign_out > a {
     color: white;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .sign_up_in > a:hover,

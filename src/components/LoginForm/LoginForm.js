@@ -24,7 +24,7 @@ class LoginForm extends Component {
             .then(() => {
                 user.value = '';
                 pass.value = '';
-                this.props.history.push('/');
+                this.props.history.push('/seach-recipe');
                 window.location.reload(false);
             })
             .catch(res => {

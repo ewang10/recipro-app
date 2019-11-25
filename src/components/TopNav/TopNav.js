@@ -21,7 +21,7 @@ class TopNav extends Component {
             <div className="sign_out">
                 <Link to="/seach-recipe">Search</Link>
                 <Link
-                    to="/"
+                    to="/login"
                     className="logout"
                     onClick={() => this.handleLogout()}
                 >Logout</Link>

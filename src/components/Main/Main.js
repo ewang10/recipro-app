@@ -10,8 +10,8 @@ class Main extends Component {
             password: 'Demo!2345'
         })
             .then(() => {
-                window.location.reload(false);
                 this.props.history.push('/seach-recipe');
+                window.location.reload(false);
             })
             .catch(error => console.log(error.message));
     }

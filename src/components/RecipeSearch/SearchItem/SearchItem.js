@@ -9,7 +9,7 @@ export default class SearchItem extends Component {
 
     static contextType = RecipeContext;
 
-    saveRecipe = () => {
+    saveRecipe () {
         const { item } = this.props;
         const recipe = {
             name: item.recipe.label,
@@ -32,7 +32,7 @@ export default class SearchItem extends Component {
         const button = (TokenService.hasAuthToken())
             ? (<button
                 type='button'
-                onClick={this.saveRecipe}
+                onClick={() => this.saveRecipe()}
             >
                 Save
             </button>)

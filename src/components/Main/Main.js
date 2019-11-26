@@ -38,7 +38,7 @@ class Main extends Component {
                     </p>
                     <div className="video-container">
                         <video controls autoPlay loop preload="auto">
-                            <source src="Search-Recipe-Instructions_Trim.mp4" type="video/mp4" />
+                            <source src="Search-Recipe-Instructions.mp4" type="video/mp4" />
                         </video>
                     </div>
                 </div>

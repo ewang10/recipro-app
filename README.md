@@ -1,6 +1,6 @@
 # ReciPro 
 
-![](public/ReciPro.png)
+![](public/ReciPro.PNG)
 
 **link to app:** 
 https://recipro-app.now.sh/

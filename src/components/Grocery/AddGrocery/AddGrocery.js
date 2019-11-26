@@ -30,7 +30,7 @@ class AddGrocery extends Component {
 
         if (name.length === 0) {
             return 'Name is required';
-        } 
+        }
     }
 
     handleSubmit(event) {
@@ -55,35 +55,37 @@ class AddGrocery extends Component {
     render() {
         const { error } = this.context;
         return (
-            <div className="AddGrocery">
-                <h3>Create a Grocery</h3>
-                <form onSubmit={event => this.handleSubmit(event)}>
-                    <div className='alert'>
-                        {error && <p className='error'>{error.message}</p>}
-                    </div>
-                    <label htmlFor="groceryName">
-                        Name
+            <section className="add-grocery-background">
+                <div className="AddGrocery">
+                    <h3>Create a Grocery</h3>
+                    <form onSubmit={event => this.handleSubmit(event)}>
+                        <div className='alert'>
+                            {error && <p className='error'>{error.message}</p>}
+                        </div>
+                        <label htmlFor="groceryName">
+                            Name
                     </label>
-                    <input
-                        type="text"
-                        name="groceryName"
-                        id="groceryName"
-                        aria-required="true"
-                        aria-invalid="true"
-                        aria-describedby="validate"
-                        onChange={e => this.updateName(e.target.value)}
-                        required />
-                    {this.state.name.touched && (
-                        <ValidationError message={this.validateName()} />
-                    )}
-                    <button
-                        type="submit"
-                        disabled={this.validateName()}
-                    >
-                        Add grocery
+                        <input
+                            type="text"
+                            name="groceryName"
+                            id="groceryName"
+                            aria-required="true"
+                            aria-invalid="true"
+                            aria-describedby="validate"
+                            onChange={e => this.updateName(e.target.value)}
+                            required />
+                        {this.state.name.touched && (
+                            <ValidationError message={this.validateName()} />
+                        )}
+                        <button
+                            type="submit"
+                            disabled={this.validateName()}
+                        >
+                            Add grocery
                     </button>
-                </form>
-            </div>
+                    </form>
+                </div>
+            </section>
         );
     }
 }

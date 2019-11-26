@@ -1,6 +1,21 @@
+.add-grocery-background {
+    background: url(../Grocery.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
+.AddGrocery {
+    padding-top: 30px;
+}
+
 .AddGrocery > h3 {
     text-align: center;
-    color: #146642;
+    color: white;
 }
 
 .AddGrocery > form {
@@ -14,6 +29,11 @@
 .AddGrocery > form > .alert {
     color: red;
     margin: 5px 0;
+    font-weight: 900;
+}
+
+.AddGrocery > form > label {
+    color: white;
 }
 
 .AddGrocery > form > label,

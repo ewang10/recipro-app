@@ -100,8 +100,8 @@ class App extends Component {
           <PublicOnlyRoute path="/login" component={LoginForm} />
 
           <GroceryProvider>
-            <PrivateRoute path="/grocery" component={Grocery} />
-            <PrivateRoute path="/add-grocery" component={AddGrocery} />
+            <PrivateRoute exact path="/grocery" component={Grocery} />
+            <PrivateRoute path="/grocery/add-grocery" component={AddGrocery} />
           </GroceryProvider>
 
           <PantryProvider>

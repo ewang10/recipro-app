@@ -30,7 +30,7 @@ class FridgeItemMain extends Component {
                         {this.context.item.note}
                     </div>
                     <div className="note-controller">
-                        <Link to={`/edit-fridge-item/${this.context.item.id}`}>
+                        <Link to={`/fridge/edit-fridge-item/${this.context.item.id}`}>
                             <button type="button">Update</button>
                         </Link>
                         <button
@@ -52,9 +52,11 @@ class FridgeItemMain extends Component {
     render() {
         const item = this.context.item ? this.displayItem() : '';
         return (
-            <div className="FridgeItemMain wrapper">
-                {item}
-            </div>
+            <section className="fridge-main">
+                <div className="FridgeItemMain wrapper">
+                    {item}
+                </div>
+            </section>
         );
 
     }

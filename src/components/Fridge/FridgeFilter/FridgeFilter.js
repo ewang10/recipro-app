@@ -36,7 +36,7 @@ class FridgeFilter extends Component {
         return (
             <div className="FridgeFilter">
                 {items}
-                <Link to="/add-fridge-item">
+                <Link to="/fridge/add-fridge-item">
                     <button type="button">
                         + Item
                     </button>

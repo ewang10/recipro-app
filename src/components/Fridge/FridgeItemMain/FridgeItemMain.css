@@ -1,5 +1,16 @@
+.fridge-main {
+    background: url(../Fridge.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
 .FridgeItemMain {
     margin: 0 auto;
+    padding: 30px 0;
 }
 
 .wrapper {
@@ -11,12 +22,13 @@
 
 .FridgeItemMain > h4 {
     font-size: 25px;
-    color: #146642;
+    color: white;
 }
 
 .FridgeItemMain > .expiration-date {
     padding: 10px 15px;
     font-weight: 500;
+    color: white;
 }
 
 .FridgeItemMain > .note {

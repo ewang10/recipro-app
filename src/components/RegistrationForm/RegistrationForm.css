@@ -1,8 +1,23 @@
+.registration-background {
+    background: url(../LoginForm/Login-Register.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.RegistrationForm {
+    padding-top: 30px;
 }
 
 .RegistrationForm legend {

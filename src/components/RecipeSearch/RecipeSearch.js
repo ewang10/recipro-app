@@ -35,17 +35,17 @@ class RecipeSearch extends Component {
                 this.setState({ searchResults: data.hits });
 
                 if (this.state.searchResults.length !== 0) {
-                    //console.log('show list true ', this.state.searchResults)
+                    
                     this.setState({ showList: true })
                 } else {
-                    //console.log('no results')
+                    
                     this.setState({ noResults: true })
                 }
             })
             .catch(error => console.log(error));
     }
 
-    //$(getRecipeToSave);
+
     componentDidMount() {
         this.setState({
             showList: false,

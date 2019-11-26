@@ -50,7 +50,6 @@ class AddPantryItem extends Component {
                 itemContent.value = '';
                 itemCategory.value = '';
 
-                //console.log('category added ', data.categoryid)
                 this.context.addItem(data);
                 this.context.reset();
                 this.props.history.push('/pantry');
@@ -98,7 +97,6 @@ class AddPantryItem extends Component {
 
     validateCategory() {
         const category = this.state.category.value.trim();
-        //console.log('new category ', category)
         if (category === 'None') {
             return 'Category is required';
         }
@@ -118,77 +116,79 @@ class AddPantryItem extends Component {
                 <option key={i} value={category.name}>{category.name}</option>
             )
         return (
-            <div className="AddPantryItem">
-                <h3>Create an item</h3>
-                <form onSubmit={e => this.handleSubmit(e)}>
-                    <div className='alert'>
-                        {error && <p className='error'>{error.message}</p>}
-                    </div>
-                    <label htmlFor="itemName">
-                        Name
-                    </label>
-                    <input
-                        name="itemName"
-                        id="itemName"
-                        aria-required="true"
-                        aria-invalid="true"
-                        aria-describedby="validate"
-                        onChange={e => this.updateName(e.target.value)}
-                        required />
-                    {this.state.itemName.touched && (
-                        <ValidationError message={this.validateName()} />
-                    )}
-                    <label htmlFor="itemCategory">
-                        Category
-                    </label>
-                    <select
-                        name="itemCategory"
-                        id="itemCategory"
-                        aria-required="true"
-                        aria-invalid="true"
-                        aria-describedby="validate"
-                        onChange={e => this.updateCategory(e.target.value)}
-                        required>
-                        <option value="None">...</option>
-                        {options}
-                    </select>
-                    {this.state.category.touched && (
-                        <ValidationError message={this.validateCategory()} />
-                    )}
-                    <lable htmlFor="expirationDate">
-                        Expiration date
-                    </lable>
-                    <input
-                        type="date"
-                        name="expirationDate"
-                        aria-required="true"
-                        aria-invalid="true"
-                        aria-describedby="validate"
-                        onChange={e => this.updateExpiration(e.target.value)}
-                        required />
-                    {this.state.expiration.touched && (
-                        <ValidationError message={this.validateDate()} />
-                    )}
-                    <label htmlFor="itemContent">
-                        Note
-                    </label>
-                    <textarea
-                        id="itemContent"
-                        name="itemContent"
-                        onChange={e => this.updateNote(e.target.value)}
-                    />
-                    <button
-                        type="submit"
-                        disabled={
-                            this.validateDate() ||
-                            this.validateName() ||
-                            this.validateCategory()
-                        }
-                    >
-                        Add item
-                    </button>
-                </form>
-            </div>
+            <section className="add-pantry-item-background">
+                <div className="AddPantryItem">
+                    <h3>Create an item</h3>
+                    <form onSubmit={e => this.handleSubmit(e)}>
+                        <div className='alert'>
+                            {error && <p className='error'>{error.message}</p>}
+                        </div>
+                        <label htmlFor="itemName">
+                            Name
+                        </label>
+                        <input
+                            name="itemName"
+                            id="itemName"
+                            aria-required="true"
+                            aria-invalid="true"
+                            aria-describedby="validate"
+                            onChange={e => this.updateName(e.target.value)}
+                            required />
+                        {this.state.itemName.touched && (
+                            <ValidationError message={this.validateName()} />
+                        )}
+                        <label htmlFor="itemCategory">
+                            Category
+                        </label>
+                        <select
+                            name="itemCategory"
+                            id="itemCategory"
+                            aria-required="true"
+                            aria-invalid="true"
+                            aria-describedby="validate"
+                            onChange={e => this.updateCategory(e.target.value)}
+                            required>
+                            <option value="None">...</option>
+                            {options}
+                        </select>
+                        {this.state.category.touched && (
+                            <ValidationError message={this.validateCategory()} />
+                        )}
+                        <lable htmlFor="expirationDate" id="exp-date">
+                            Expiration date
+                        </lable>
+                        <input
+                            type="date"
+                            name="expirationDate"
+                            aria-required="true"
+                            aria-invalid="true"
+                            aria-describedby="validate"
+                            onChange={e => this.updateExpiration(e.target.value)}
+                            required />
+                        {this.state.expiration.touched && (
+                            <ValidationError message={this.validateDate()} />
+                        )}
+                        <label htmlFor="itemContent">
+                            Note
+                        </label>
+                        <textarea
+                            id="itemContent"
+                            name="itemContent"
+                            onChange={e => this.updateNote(e.target.value)}
+                        />
+                        <button
+                            type="submit"
+                            disabled={
+                                this.validateDate() ||
+                                this.validateName() ||
+                                this.validateCategory()
+                            }
+                        >
+                            Add item
+                        </button>
+                    </form>
+                </div>
+            </section>
         );
     }
 }

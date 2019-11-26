@@ -30,7 +30,7 @@ class PantryItemMain extends Component {
                         {this.context.item.note}
                     </div>
                     <div className="note-controller">
-                        <Link to={`/edit-pantry-item/${this.context.item.id}`}>
+                        <Link to={`/pantry/edit-pantry-item/${this.context.item.id}`}>
                             <button type="button">Update</button>
                         </Link>
                         <button
@@ -52,23 +52,18 @@ class PantryItemMain extends Component {
     render() {
         const item = this.context.item ? this.displayItem() : '';
         return (
-            <div className="PantryItemMain wrapper">
-                {item}
-            </div>
+            <section className="pantry-main-background">
+                <div className="PantryItemMain wrapper">
+                    {item}
+                </div>
+            </section>
         );
 
     }
 }
 
 PantryItemMain.defaultProps = {
-    item: {
-        id: 1,
-        name: "cheese",
-        category_id: 1,
-        modified: new Date(),
-        expiration_date: "2017-11-1",
-        note: "some note..."
-    }
+    item: {}
 }
 
 export default PantryItemMain;

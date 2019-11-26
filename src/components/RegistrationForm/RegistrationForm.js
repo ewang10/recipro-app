@@ -34,26 +34,28 @@ class RegistrationForm extends Component {
     render() {
         const { error } = this.state;
         return (
-            <div className="RegistrationForm wrapper">
-                <form 
-                    className="registration_form"
-                    onSubmit={event => this.handleSubmit(event)}
-                >
-                    <legend>Sign up</legend>
-                    <div className='alert'>
-                        {error && <p className='error'>{error}</p>}
-                    </div>
-                    <div className="username">
-                        <label htmlFor="user">Username: </label>
-                        <input name="user" id="user" required />
-                    </div>
-                    <div className="password">
-                        <label htmlFor="pass">Password: </label>
-                        <input type="password" name="pass" id="pass" required />
-                    </div>
-                    <button type="submit">Register</button>
-                </form>
-            </div>
+            <section className="registration-background">
+                <div className="RegistrationForm wrapper">
+                    <form
+                        className="registration_form"
+                        onSubmit={event => this.handleSubmit(event)}
+                    >
+                        <legend>Sign up</legend>
+                        <div className='alert'>
+                            {error && <p className='error'>{error}</p>}
+                        </div>
+                        <div className="username">
+                            <label htmlFor="user">Username: </label>
+                            <input name="user" id="user" required />
+                        </div>
+                        <div className="password">
+                            <label htmlFor="pass">Password: </label>
+                            <input type="password" name="pass" id="pass" required />
+                        </div>
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </section>
         );
     }
 }

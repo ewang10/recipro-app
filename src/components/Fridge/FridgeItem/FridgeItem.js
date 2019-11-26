@@ -15,7 +15,6 @@ class FridgeItem extends Component {
         FridgeItemApiService.deleteItem(itemId)
             .then(() => {
                 cb(itemId);
-                //this.props.history.push('/fridge');
             })
             .catch(error => this.context.setError(error));
     }
@@ -27,7 +26,7 @@ class FridgeItem extends Component {
                 <h4
                     onClick={() => this.context.updateItem(item)}
                 >
-                    <Link to={`/fridge-item/${item.id}`}>
+                    <Link to={`/fridge/fridge-item/${item.id}`}>
                         {item.name}
                     </Link>
                 </h4>

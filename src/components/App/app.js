@@ -13,14 +13,12 @@ import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import LoginForm from '../LoginForm/LoginForm';
 import Main from '../Main/Main';
 import AddGrocery from '../Grocery/AddGrocery/AddGrocery';
-//import CategoryNav from '../Pantry/CategoryNav/CategoryNav';
-//import PantryFilter from '../Pantry/PantryFilter/PantryFilter';
+
 import PantryItemMain from '../Pantry/PantryItemMain/PantryItemMain';
 import AddPantryCategory from '../Pantry/AddPantryCategory/AddPantryCategory';
 import AddPantryItem from '../Pantry/AddPantryItem/AddPantryItem';
 import EditPantryItem from '../Pantry/EditIPantryItem/EditIPantryItem';
-//import FridgeCategoryNav from '../Fridge/FridgeCategoryNav/FridgeCategoryNav';
-//import FridgeFilter from '../Fridge/FridgeFilter/FridgeFilter';
+
 import FridgeItemMain from '../Fridge/FridgeItemMain/FridgeItemMain';
 import AddFridgeCategory from '../Fridge/AddFridgeCategory/AddFridgeCategory';
 import AddFridgeItem from '../Fridge/AddFridgeItem/AddFridgeItem';
@@ -107,53 +105,53 @@ class App extends Component {
           </GroceryProvider>
 
           <PantryProvider>
-            <PrivateRoute path="/pantry" component={Pantry} />
+            <PrivateRoute exact path="/pantry" component={Pantry} />
             <PrivateRoute
-              path="/pantry-category/:id"
+              path="/pantry/pantry-category/:id"
               component={Pantry}
             />
 
             <PrivateRoute
-              path="/pantry-item/:item_id"
+              path="/pantry/pantry-item/:item_id"
               component={PantryItemMain}
 
             />
             <PrivateRoute
-              path="/add-pantry-item"
+              path="/pantry/add-pantry-item"
               component={AddPantryItem}
             />
             <PrivateRoute
-              path="/add-pantry-category"
+              path="/pantry/add-pantry-category"
               component={AddPantryCategory}
             />
             <PrivateRoute
-              path='/edit-pantry-item/:item_id'
+              path='/pantry/edit-pantry-item/:item_id'
               component={EditPantryItem}
             />
           </PantryProvider>
 
           <FridgeProvider>
-            <PrivateRoute path="/fridge" component={Fridge} />
+            <PrivateRoute exact path="/fridge" component={Fridge} />
             <PrivateRoute
-              path="/fridge-category/:id"
+              path="/fridge/fridge-category/:id"
               component={Fridge}
             />
 
             <PrivateRoute
-              path="/fridge-item/:item_id"
+              path="/fridge/fridge-item/:item_id"
               component={FridgeItemMain}
 
             />
             <PrivateRoute
-              path="/add-fridge-category"
+              path="/fridge/add-fridge-category"
               component={AddFridgeCategory}
             />
             <PrivateRoute
-              path="/add-fridge-item"
+              path="/fridge/add-fridge-item"
               component={AddFridgeItem}
             />
             <PrivateRoute
-              path='/edit-fridge-item/:item_id'
+              path='/fridge/edit-fridge-item/:item_id'
               component={EditFridgeItem}
             />
           </FridgeProvider>

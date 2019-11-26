@@ -35,26 +35,28 @@ class LoginForm extends Component {
     render() {
         const { error } = this.state;
         return (
-            <div className="LoginForm wrapper">
-                <form 
-                    className="login_form"
-                    onSubmit={event => this.handleSubmit(event)}
-                >
-                    <legend>Log in</legend>
-                    <div className='alert'>
-                        {error && <p className='error'>{error}</p>}
-                    </div>
-                    <div className="username">
-                        <label htmlFor="user">Username: </label>
-                        <input name="user" id="user" required />
-                    </div>
-                    <div className="password">
-                        <label htmlFor="pass">Password: </label>
-                        <input type="password" name="pass" id="pass" required />
-                    </div>
-                    <button type="submit">Log in</button>
-                </form>
-            </div>
+            <section className="login-background">
+                <div className="LoginForm wrapper">
+                    <form
+                        className="login_form"
+                        onSubmit={event => this.handleSubmit(event)}
+                    >
+                        <legend>Log in</legend>
+                        <div className='alert'>
+                            {error && <p className='error'>{error}</p>}
+                        </div>
+                        <div className="username">
+                            <label htmlFor="user">Username: </label>
+                            <input name="user" id="user" required />
+                        </div>
+                        <div className="password">
+                            <label htmlFor="pass">Password: </label>
+                            <input type="password" name="pass" id="pass" required />
+                        </div>
+                        <button type="submit">Log in</button>
+                    </form>
+                </div>
+            </section>
         );
     }
 }

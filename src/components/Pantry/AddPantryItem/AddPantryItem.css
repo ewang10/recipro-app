@@ -1,6 +1,21 @@
+.add-pantry-item-background {
+    background: url(../Pantry.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
+.AddPantryItem {
+    padding-top: 30px;
+}
+
 .AddPantryItem > h3 {
     text-align: center;
-    color: #146642;
+    color: white;
 }
 
 .AddPantryItem > form {
@@ -12,9 +27,16 @@
 .AddPantryItem > form > .alert {
     color: red;
     margin: 0 0 10px;
+    font-weight: 900;
+}
+
+.AddPantryItem > form > #exp-date,
+.AddPantryItem > form > label {
+    color: white
 }
 
 .AddPantryItem > form > label,
+.AddPantryItem > form > #exp-date,
 .AddPantryItem > form > input,
 #itemCategory, #itemContent {
     display: block;

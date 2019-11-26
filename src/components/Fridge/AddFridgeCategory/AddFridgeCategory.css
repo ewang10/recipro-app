@@ -1,6 +1,21 @@
+.add-fridge-category-background {
+    background: url(../Fridge.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
+.AddFridgeCategory {
+    padding-top: 30px;
+}
+
 .AddFridgeCategory > h3 {
     text-align: center;
-    color: #146642;
+    color: white;
 }
 
 .AddFridgeCategory > form {
@@ -14,6 +29,11 @@
 .AddFridgeCategory > form > .alert {
     color: red;
     margin: 5px 0;
+    font-weight: 900;
+}
+
+.AddFridgeCategory > form > label {
+    color: white;
 }
 
 .AddFridgeCategory > form > label,

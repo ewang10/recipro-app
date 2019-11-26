@@ -6,14 +6,12 @@ class RecipeDetail extends Component {
     static contextType = RecipeContext;
     render() {
         const { selectedRecipe } = this.context;
-        //console.log('selected recipe iss ', selectedRecipe)
+
         const image =
             (selectedRecipe.image)
                 ? <img src={selectedRecipe.image} alt={selectedRecipe.name} />
                 : <img src="../../Utils/Images/No-image.png" alt="not available" />
-        //console.log('match ', this.props.match.params.recipe_id)
-        //const recipe = this.props.recipes.find(recipe =>
-        //    recipe.id === parseInt(this.props.match.params.recipe_id));
+
         let ingredients;
         if (selectedRecipe.ingredients) {
             const recipeIngredients = selectedRecipe.ingredients.map((ingredient, i) =>
@@ -26,7 +24,6 @@ class RecipeDetail extends Component {
         } else {
             ingredients = 'No ingredients available';
         }
-        //console.log(recipe);
         return (
             <div className="RecipeDetail">
                 <h4>

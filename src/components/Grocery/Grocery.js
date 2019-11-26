@@ -14,26 +14,26 @@ class Grocery extends Component {
             .then(groceries => {
 
                 this.context.setGroceries(groceries)
-                //console.log('groceries owned ', this.context.groceries)
             })
             .catch(error => this.context.setError(error));
     }
 
     render() {
-        //console.log('groceries owned ', this.context.groceries)
         const items = this.context.groceries.map((item, i) =>
             <GroceryItem item={item} key={i} />
         )
         return (
-            <div className="Grocery">
-                <h2>Grocery</h2>
-                {items}
-                <Link to="/add-grocery">
-                    <button type="button">
-                        + Grocery
+            <section className="grocery-background">
+                <div className="Grocery">
+                    <h2>Grocery</h2>
+                    {items}
+                    <Link to="/add-grocery">
+                        <button type="button">
+                            + Grocery
                     </button>
-                </Link>
-            </div>
+                    </Link>
+                </div>
+            </section>
         );
     }
 }

@@ -1,6 +1,21 @@
+.add-pantry-category-background {
+    background: url(../Pantry.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
+.AddPantryCategory {
+    padding-top: 30px;
+}
+
 .AddPantryCategory > h3 {
     text-align: center;
-    color: #146642;
+    color: white;
 }
 
 .AddPantryCategory > form {
@@ -14,6 +29,11 @@
 .AddPantryCategory > form > .alert {
     color: red;
     margin: 5px 0;
+    font-weight: 900;
+}
+
+.AddPantryCategory > form > label {
+    color: white;
 }
 
 .AddPantryCategory > form > label,

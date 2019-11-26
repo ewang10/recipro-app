@@ -17,35 +17,37 @@ class Fridge extends Component {
             .catch(error => this.context.setError(error));
 
         FridgeItemApiService.getItems()
-                .then(items => this.context.setItems(items))
-                .catch(error => this.context.setError(error));
+            .then(items => this.context.setItems(items))
+            .catch(error => this.context.setError(error));
     }
 
     handleSideNav() {
         return (
             <>
-                    <FridgeCategoryNav />
+                <FridgeCategoryNav />
             </>
         )
     }
     handleMain() {
         return (
             <>
-                    <FridgeFilter />
+                <FridgeFilter />
             </>
         )
     }
     render() {
         return (
-            <div className="fridge">
-                <header>
-                    <h2 onClick={() => this.context.reset()}>
-                        <Link to="/fridge">Fridge</Link>
-                    </h2>
-                </header>
-                <nav className="nav-side">{this.handleSideNav()}</nav>
-                <section className="item_filter">{this.handleMain()}</section>
-            </div>
+            <section className="fridge-background">
+                <div className="fridge">
+                    <header>
+                        <h2 onClick={() => this.context.reset()}>
+                            <Link to="/fridge">Fridge</Link>
+                        </h2>
+                    </header>
+                    <nav className="nav-side">{this.handleSideNav()}</nav>
+                    <section className="item_filter">{this.handleMain()}</section>
+                </div>
+            </section>
         );
     }
 }

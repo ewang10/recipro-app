@@ -1,12 +1,24 @@
+.grocery-background {
+    background: url(Grocery.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
 .Grocery {
     width: 80%;
     margin: 0 auto;
+    padding-top: 30px;
 }
 
 .Grocery > h2 {
     text-align: center;
     padding: 15px;
-    color: #146642;
+    color: white;
 }
 
 .Grocery button {

@@ -1,3 +1,14 @@
+.pantry-background {
+    background: url(Pantry.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
 .pantry {
     display: grid;
     grid-template: "header header" "categories items";
@@ -5,7 +16,7 @@
     grid-template-rows: 60px 1fr;
     padding: 80px 0;
     height: 100%;
-    padding: 0 10px;
+    padding: 30px 10px 0;
 }
 
 .pantry > header {
@@ -16,7 +27,7 @@
 
 .pantry > header > h2 > a {
     cursor: pointer;
-    color: #146642;
+    color: white;
 }
 
 .pantry > .nav-side {

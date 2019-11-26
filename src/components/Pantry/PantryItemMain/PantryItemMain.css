@@ -1,5 +1,17 @@
+.pantry-main-background {
+    background: url(../Pantry.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
 .PantryItemMain {
     margin: 0 auto;
+    padding-top: 30px;
 }
 
 .wrapper {
@@ -11,12 +23,13 @@
 
 .PantryItemMain > h4 {
     font-size: 25px;
-    color: #146642;
+    color: white;
 }
 
 .PantryItemMain > .expiration-date {
     padding: 10px 15px;
     font-weight: 500;
+    color: white;
 }
 
 .PantryItemMain > .note {

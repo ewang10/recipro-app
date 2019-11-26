@@ -15,14 +15,16 @@ class Recipe extends Component {
     }
 
     render() {
-        const recipes = this.context.recipes.map((recipe, i) => 
-            <RecipeItem recipe={recipe} key={i}/>
+        const recipes = this.context.recipes.map((recipe, i) =>
+            <RecipeItem recipe={recipe} key={i} />
         )
         return (
-            <div className="Recipe">
-                <h2>Recipe</h2>
-                {recipes}
-            </div>
+            <section className="recipe-background">
+                <div className="Recipe">
+                    <h2>Recipe</h2>
+                    {recipes}
+                </div>
+            </section>
         );
     }
 }

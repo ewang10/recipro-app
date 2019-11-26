@@ -1,5 +1,20 @@
+.recipe-background {
+    background: url(Recipe.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
+.Recipe {
+    padding-top: 30px;
+}
+
 .Recipe > h2 {
     text-align: center;
     padding: 15px;
-    color: #146642;
+    color: white;
 }

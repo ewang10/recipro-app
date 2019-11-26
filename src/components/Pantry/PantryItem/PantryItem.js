@@ -15,15 +15,13 @@ class PantryItem extends Component {
         PantryItemApiService.deleteItem(itemId)
             .then(() => {
                 cb(itemId);
-                //this.props.history.push('/pantry');
-                //window.location.reload(false);
             })
             .catch(error => this.context.setError(error));
     }
 
     render() {
         const { item } = this.props;
-        //console.log('item iss ', item);
+
         return (
             <div
                 className="PantryItem"
@@ -31,7 +29,7 @@ class PantryItem extends Component {
                 <h4
                     onClick={() => this.context.updateItem(item)}
                 >
-                    <Link to={`/pantry-item/${item.id}`}>
+                    <Link to={`/pantry/pantry-item/${item.id}`}>
                         {item.name}
                     </Link>
                 </h4>

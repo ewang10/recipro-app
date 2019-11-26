@@ -1,6 +1,21 @@
+.add-fridge-item-background {
+    background: url(../Fridge.jpg) 
+        no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+
+    background-blend-mode: multiply;
+    background-color: #808080;
+    margin: -20px auto;
+}
+
+.AddFridgeItem {
+    padding-top: 30px;
+}
+
 .AddFridgeItem > h3 {
     text-align: center;
-    color: #146642;
+    color: white;
 }
 
 .AddFridgeItem > form {
@@ -12,9 +27,16 @@
 .AddFridgeItem > form > .alert {
     color: red;
     margin: 0 0 10px;
+    font-weight: 900;
 }
 
 .AddFridgeItem > form > label,
+.AddFridgeItem > form > #exp-date {
+    color: white;
+}
+
+.AddFridgeItem > form > label,
+.AddFridgeItem > form > #exp-date,
 .AddFridgeItem > form > input,
 #itemCategory, #itemContent {
     display: block;

@@ -29,6 +29,10 @@ class RecipeSearch extends Component {
     handleSearch(event) {
         event.preventDefault();
         const { search } = event.target;
+        this.setState({
+            showList: false,
+            noResults: false
+        });
 
         SearchRecipeApiService.getRecipes(search.value)
             .then(data => {

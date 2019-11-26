@@ -57,6 +57,12 @@
     background-color: white;
 }
 
+.no-results {
+    color: red;
+    font-weight: 900;
+    text-align: center;
+}
+
 
 #results {
     margin: 0 auto;

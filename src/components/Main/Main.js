@@ -37,7 +37,7 @@ class Main extends Component {
                         to make? Search for recipes, and save the ones you like.
                     </p>
                     <video controls autoPlay loop preload="auto">
-                        <source src="Search-Recipe-Instructions_Trim.mp4" type="video/mp4"/>
+                        <source src="../../../public/Search-Recipe-Instructions_Trim.mp4" type="video/mp4"/>
                     </video>
                 </div>
             </section>

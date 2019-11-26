@@ -43,6 +43,8 @@
 
 .login_form > div > label {
     color: white;
+    display: inline-block;
+    width: 90px;
 }
 
 .login_form > button {

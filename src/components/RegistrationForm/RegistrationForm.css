@@ -43,6 +43,8 @@
 
 .registration_form > div > label {
     color: white;
+    display: inline-block;
+    width: 90px;
 }
 
 .registration_form > button {

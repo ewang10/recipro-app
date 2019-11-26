@@ -45,11 +45,11 @@ class RegistrationForm extends Component {
                             {error && <p className='error'>{error}</p>}
                         </div>
                         <div className="username">
-                            <label htmlFor="user">Username: </label>
+                            <label htmlFor="user">Username </label>
                             <input name="user" id="user" required />
                         </div>
                         <div className="password">
-                            <label htmlFor="pass">Password: {" "}</label>
+                            <label htmlFor="pass">Password </label>
                             <input type="password" name="pass" id="pass" required />
                         </div>
                         <button type="submit">Register</button>

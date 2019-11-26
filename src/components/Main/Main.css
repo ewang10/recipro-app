@@ -48,16 +48,25 @@
     padding: 20px 0;
 }
 
+.video-container {
+    margin: 10px auto 0;
+    padding-bottom: 30px;
+}
+
+video {
+    max-width: 100%;
+}
+
 @media screen and (min-width: 1024px) {
     @media screen and (min-height: 768px) {
-        .Main > .about {
+        .Main > .about, .video-container {
             max-width: 70%;
         }
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .Main > .about {
+    .Main > .about, .video-container {
         max-width: 50%;
     }
 }

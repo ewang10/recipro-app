@@ -36,9 +36,11 @@ class Main extends Component {
                         something in your fridge/pantry but don't know what
                         to make? Search for recipes, and save the ones you like.
                     </p>
-                    <video controls autoPlay loop preload="auto">
-                        <source src="../../../public/Search-Recipe-Instructions_Trim.mp4" type="video/mp4"/>
-                    </video>
+                    <div className="video-container">
+                        <video controls autoPlay loop preload="auto">
+                            <source src="Search-Recipe-Instructions_Trim.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
             </section>
         );

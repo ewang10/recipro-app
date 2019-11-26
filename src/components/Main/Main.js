@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
+import {Player} from 'video-react';
 import './Main.css';
+import "../../../node_modules/video-react/dist/video-react.css";
 
 class Main extends Component {
     demoLogin() {
@@ -37,9 +39,7 @@ class Main extends Component {
                         to make? Search for recipes, and save the ones you like.
                     </p>
                     <div className="video-container">
-                        <video controls autoPlay loop preload="auto">
-                            <source src="Search-Recipe-Instructions.mp4" type="video/mp4" />
-                        </video>
+                        <Player src="Search-Recipe-Instructions.mp4"/>
                     </div>
                 </div>
             </section>

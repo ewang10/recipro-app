@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
-import {Player} from 'video-react';
 import './Main.css';
 import "../../../node_modules/video-react/dist/video-react.css";
 
@@ -38,9 +37,6 @@ class Main extends Component {
                         something in your fridge/pantry but don't know what
                         to make? Search for recipes, and save the ones you like.
                     </p>
-                    <div className="video-container">
-                        <Player src="Search-Recipe-Instruction.mp4"/>
-                    </div>
                 </div>
             </section>
         );

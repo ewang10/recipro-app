@@ -37,6 +37,11 @@ class Main extends Component {
                         something in your fridge/pantry but don't know what
                         to make? Search for recipes, and save the ones you like.
                     </p>
+                    <div className="video-container">
+                        <video controls autoPlay loop preload="true">
+                            <source src="https://res.cloudinary.com/dx3fnhq8j/video/upload/v1574895428/ReciPro/Search-Recipe-Instruction_sohqhj.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
                 </div>
             </section>
         );

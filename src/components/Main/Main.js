@@ -39,7 +39,7 @@ class Main extends Component {
                         to make? Search for recipes, and save the ones you like.
                     </p>
                     <div className="video-container">
-                        <Player src={process.env.PUBLIC_URL + '/assets/Search-Recipe-Instructions.mp4'}/>
+                        <Player src="Search-Recipe-Instruction.mp4"/>
                     </div>
                 </div>
             </section>

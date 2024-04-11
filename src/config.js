@@ -1,6 +1,6 @@
 export default {
-    APIT_ENDPOINT: 'https://still-fjord-13060.herokuapp.com/api',
-    TOKEN_KEY: 'recipro-auth-token',
-    EDAMAM_ID: 'b6e53abc',
-    EDAMAM_KEY: '17a3d9cf41f07f362212354c21fe6dfd'
+    APIT_ENDPOINT: process.env.REACT_APP_API_BASE_URL,
+    TOKEN_KEY: process.env.REACT_APP_TOKEN_KEY,
+    EDAMAM_ID: process.env.REACT_APP_EDAMAM_ID,
+    EDAMAM_KEY: process.env.REACT_APP_EDAMAM_KEY
 }
